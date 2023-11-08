@@ -80,7 +80,7 @@ progress::-webkit-progress-bar {
     margin-right: 2.5em;
     border-radius: 999px;
     font-size: 0.4em;
-    font-family: "Roboto";
+    font-family: "DM Sans";
 }
 
 #randomizebutton:active {
@@ -92,7 +92,7 @@ progress::-webkit-progress-bar {
 #debugnotice {
     background-color: #ffdada;
     padding: 16px;
-    font-family: "Roboto";
+    font-family: "DM Sans";
     font-weight: bold;
     margin-right: 1em;
     border-radius: 0.7000000000000028em;
@@ -142,6 +142,48 @@ p.progressbartext {
     font-family: "DM Sans"
 }
 
+h2.tab0 {
+    margin-left: 330px;
+    margin-top: -55px;
+    font-family: "DM Sans";
+    font-weight: normal;
+}
+
+h2.tab1 {
+    margin-left: 480px;
+    margin-top: -51px;
+    font-family: "DM Sans";
+    font-weight: normal;
+}
+
+h2.tab2 {
+    margin-left: 600px;
+    margin-top: -52px;
+    font-family: "DM Sans";
+    font-weight: normal;
+}
+
+p.backbutton {
+    font-family: "DM Sans";
+    margin-left: 20px;
+}
+
+div.recipe {
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: white;
+}
+h2.recipetitle {
+    margin-left: 20px;
+    font-family: "DM Sans";
+}
+
+img.recipeimage {
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+}
 /*---------------------------*/
 
 /* Ikony */
