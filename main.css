@@ -1,0 +1,265 @@
+/* Hlavní prvky */
+body {
+    background-color: #f7f9fc;
+    padding: 0;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+  }
+
+#titletext {
+    font-family: "DM Sans", Sans-serif;
+    font-weight: normal;
+}
+
+h2.generaltitle {
+    font-family: "DM Sans", Sans-serif;
+    padding: 10px;
+    margin-left: 5px;
+    animation-name: generaltitle_loading;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+h2.activity {
+    font-family: "DM Sans", Sans-serif;
+    margin-bottom: 30px;
+}
+
+div.fitness_statistics {
+    background-color: transparent;
+    width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    margin-top: -20px;
+}
+
+progress {
+    width: 0%;
+    height: 25%;
+    margin-left: 18px;
+    margin-top: -15px;
+    border-radius: 999px;
+    animation-name: slider_loading;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #edf2fc;
+    border-radius: 999px;
+ }
+ progress::-webkit-progress-value {
+    background-color: #97d6ff;
+    border-radius: 999px;
+}
+
+ #contentbackground {
+    background-color: white;
+    border-top-left-radius: 20px;
+    height: 53.2em;
+    margin-top: 10px;
+    margin-left: 320px;
+ }
+
+ #sidebar {
+    float: left;
+ }
+
+#randomizebutton {
+    animation-name: button_press_revert;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    background-color: white;
+    border-color: transparent;
+    padding: 1.1em;
+    float: right;
+    margin-right: 2.5em;
+    border-radius: 999px;
+    font-size: 0.4em;
+    font-family: "Roboto";
+}
+
+#randomizebutton:active {
+    animation-name: button_press;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+#debugnotice {
+    background-color: #ffdada;
+    padding: 16px;
+    font-family: "Roboto";
+    font-weight: bold;
+    margin-right: 1em;
+    border-radius: 0.7000000000000028em;
+    font-size: 0.5em;
+    color: #7d0b0b;
+    float: right;
+}
+
+#erroricon {
+    height: 2em;
+    width: 2em;
+    margin-top: -7px;
+    margin-left: -59px;
+    position: fixed;
+}
+
+#more_exercise_tip {
+    font-family: "DM Sans", Sans-serif;
+    padding: 10px;
+    margin-left: 5px;
+    color: black;
+    background-color: transparent;
+    scale: 1;
+}
+
+#more_steps_tip {
+    font-family: "DM Sans", Sans-serif;
+    padding: 10px;
+    margin-left: 5px;
+    color: black;
+    background-color: transparent;
+    scale: 1;
+}
+
+#more_distance_tip {
+    font-family: "DM Sans", Sans-serif;
+    padding: 10px;
+    margin-left: 5px;
+    color: black;
+    background-color: transparent;
+    scale: 1;
+}
+
+p.progressbartext {
+    margin-left: 260px;
+    margin-top: 3px;
+    font-family: "DM Sans"
+}
+
+/*---------------------------*/
+
+/* Ikony */
+#mainicon {
+    margin-bottom: -4px;
+    margin-left: 15px;
+    margin-right: 10px;
+    scale: 1.5;
+}
+
+img.inline_icon {
+    margin-bottom: -3px;
+}
+
+#stepscheckmark {
+    height: 32px;
+    width: 32px;
+    margin-bottom: -0.3em;
+    margin-left: 6.2em;
+    background-color: transparent;
+}
+
+#distancecheckmark {
+    height: 32px;
+    width: 32px;
+    margin-bottom: -0.3em;
+    margin-left: 4.8em;
+}
+
+#azmcheckmark {
+    height: 32px;
+    width: 32px;
+    margin-bottom: -0.3em;
+    margin-left: -0.1em;
+}
+
+
+/*---------------------------*/
+
+/* animation */
+@keyframes slider_loading {
+    from {width: 0%;}
+    to {width: 92%;}
+}
+
+@keyframes generaltitle_loading {
+    from {color: transparent; margin-top: 90px;}
+    to {color: black; margin-top: 28px;}
+}
+
+@keyframes button_press {
+    from {color: black; background-color: white; scale: 1;}
+    to {color: white; background-color: gray; scale: 0.89;}
+}
+
+@keyframes button_press_revert {
+    from {color: white; background-color: gray; scale: 0.89;}
+    to {color: black; background-color: white; scale: 1;}
+}
+
+ /*---------------------------*/
+
+ /* Mobilní layout */
+ 
+ @media only screen and (max-width: 1000px) {
+    #sidebar {
+        float: left;
+        width: 100%;
+        margin-top: -15px;
+    }
+
+    div.fitness_statistics {
+        width: 97%;
+        height: 100px;
+        margin-top: 0px;
+    }
+
+    p.progressbartext {
+        margin-left: 88%;
+        margin-top: 3px;
+        font-family: "DM Sans"
+    }
+
+    #contentbackground {
+        float: left;
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    #titlesurroundingbox {
+        height: 60px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    #randomizebutton {
+        border-radius: 10px;
+    }
+
+    #stepscheckmark {
+        height: 32px;
+        width: 32px;
+        margin-bottom: -0.3em;
+        margin-left: 9.2em;
+    }
+
+    #distancecheckmark {
+        height: 32px;
+        width: 32px;
+        margin-bottom: -0.3em;
+        margin-left: 7.8em;
+    }
+
+    #azmcheckmark {
+        height: 32px;
+        width: 32px;
+        margin-bottom: -0.3em;
+        margin-left: 2.9em;
+    }
+}

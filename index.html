@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fittastrophe dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.svg">
+    <script src="main.js"></script>
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;1,9..40,100&display=swap" rel="stylesheet">
+    <!-- -->
+</head>
+
+<body>
+    <header id="titlesurroundingbox">
+        <h1 id="titletext"><img src="icons/mainicon.svg" id="mainicon" width=32 height=32>Fittastrophe<button type="button" id="randomizebutton" onclick="randomize()">Randomize</button><label id="debugnotice"><img src=icons/error.svg id="erroricon">Warning: Value for progress not yet set</label></h1>
+    </header>
+
+     <!-- Sidebar, Steps kategorie -->
+     <div id="sidebar">
+        <div class="fitness_statistics">
+            <h2 class="generaltitle"><img class="inline_icon" src="icons/Steps.svg">Steps <img src="icons/checkmark.svg" id="stepscheckmark"></img></h2>
+            <label for="steps"></label>
+            <progress id="stepsprogress" value="0" max="100"></progress> <!-- random hodnota -->
+            <p class="progressbartext" id="stepsprogresstext">0%</p> <!-- popis hodnoty, mění se -->
+        </div>
+
+        <!-- Sidebar, Distance kategorie -->
+        <div class="fitness_statistics">
+            <h2 class="generaltitle"><img class="inline_icon" src="icons/Distance.svg">Distance <img src="icons/checkmark.svg" id="distancecheckmark"></img></h2>
+            <label for="distance"></label>
+            <progress id="distanceprogress" value="0" max="100"></progress> <!-- random hodnota -->
+            <p class="progressbartext" id="distanceprogresstext">0%</p> <!-- popis hodnoty, mění se -->
+        </div>
+
+        <!-- Sidebar, AZM kategorie-->
+        <div class="fitness_statistics">
+            <h2 class="generaltitle"><img class="inline_icon" src="icons/AZM.svg">Movement minutes <img src="icons/checkmark.svg" id="azmcheckmark"></img></h2>
+            <label for="AZM"></label>
+            <progress id="azmprogress" value="0" max="100"></progress> <!-- random hodnota -->
+            <p class="progressbartext" id="azmprogresstext">0%</p> <!-- popis hodnoty, mění se -->
+        </div>
+    </div>
+
+    <!-- Tělo s obsahem -->
+    <div id="contentbackground">
+        <h2 class="generaltitle">Dashboard</h2>
+
+        <div class="lesson">
+            <h2 id="more_steps_tip">DOPORUČENÍ VÍCE KROKŮ</h2>
+        </div>
+
+        <div class="lesson">
+            <h2 id="more_distance_tip">DOPORUČENÍ VÍCE VZDÁLENOSTI</h2>
+        </div>
+
+        <div class="lesson">
+            <h2 id="more_exercise_tip">DOPORUČENÍ VÍCE CVIKU</h2>
+        </div>
+        
+    </div>
+</body>
