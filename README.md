@@ -1,2 +1,2 @@
-# repellentspy.github.io
-An exercise in JavaScript and randomization
+# Fittastrophe
+<h2> Fittastrophe</h2>
