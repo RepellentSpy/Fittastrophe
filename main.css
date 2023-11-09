@@ -144,9 +144,10 @@ p.progressbartext {
 
 h2.tab0 {
     margin-left: 330px;
-    margin-top: -55px;
+    margin-top: -51px;
     font-family: "DM Sans";
     font-weight: normal;
+    float: left;
 }
 
 h2.tab1 {
@@ -154,15 +155,18 @@ h2.tab1 {
     margin-top: -51px;
     font-family: "DM Sans";
     font-weight: normal;
+    float: left;
 }
 
 h2.tab2 {
     margin-left: 600px;
-    margin-top: -52px;
+    margin-top: -51px;
     font-family: "DM Sans";
     font-weight: normal;
+    float: left;
 }
 
+/* Coach podstránka */
 p.backbutton {
     font-family: "DM Sans";
     margin-left: 20px;
@@ -174,6 +178,7 @@ div.recipe {
     border-radius: 20px;
     background-color: white;
 }
+
 h2.recipetitle {
     margin-left: 20px;
     font-family: "DM Sans";
