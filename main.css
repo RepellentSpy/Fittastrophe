@@ -135,6 +135,9 @@ div.recipe {
     padding: 0.625rem;
     border-radius: 1.25rem;
     background-color: white;
+    display: inline-block; /* </div> by automaticky 
+    skončil řádek, toto zajišťuje, že ne */
+    margin-bottom: 1rem;
 }
 
 h2.recipetitle {
@@ -146,6 +149,22 @@ img.recipeimage {
     height: 12.5rem;
     width: 18.75rem;
     border-radius: 0.9rem;
+}
+
+#recipescarousel {
+    overflow: auto;
+    /* horizontal scroll */
+    white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+    height: 0.8rem;
+    border: 1px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(209, 225, 228);
+    border-radius: 999rem;
 }
 
 /* Ikony */
