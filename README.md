@@ -1,5 +1,7 @@
-# Fittastrophe - an exercise in Javascript and randomization
-<p>Fittastrophe is a simple prototype class project I am doing to expand my knowledge of git, GitHub and JavaScript.</p>
-<h3>Why use this?</h3>
-<p>Don't. There isn't any need. This is just an experiment</p>
-<p>If you want to see it regardless, open https://repellentspy.github.io/</p>
+# Popis pro učitele
+<p>Toto je můj projekt na seminář informatiky. </p>
+<p>Chtěl jsem se při tvoření tohoto projektu něco málo přinaučit, tak jsem se rozhodl používat co nejvíce věcí mně neznámých, jako je třeba Git. Vlastně jediný důvod, proč je toto na GitHubu je, abych se naučil, jak přesně s tím pracovat.</p>
+
+# Odkaz na stránku
+<p>repellentspy.github.io</p>
+<p>Pokud jste nějaký náhodný človek, bude lepší, když tento repozitář budete ignorovat. Nic zajímavého se zde nenachází</p>
