@@ -3,66 +3,51 @@ body {
     background-color: #f7f9fc;
     padding: 0;
     margin: 0;
+    overflow: hidden; /* hides scrollbar */
 }
 
-body::-webkit-scrollbar {
-    width: 0px;
-  }
-
 #titletext {
-    font-family: "DM Sans", Sans-serif;
-    font-weight: normal;
+    font: normal 400 2rem "DM Sans", Sans-serif;
 }
 
 h2.generaltitle {
     font-family: "DM Sans", Sans-serif;
-    padding: 10px;
-    margin-left: 5px;
-    animation-name: generaltitle_loading;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-h2.activity {
-    font-family: "DM Sans", Sans-serif;
-    margin-bottom: 30px;
+    padding: 0.5rem;
+    margin-left: 0.4135rem;
+    animation: generaltitle_loading 1s forwards;
 }
 
 div.fitness_statistics {
     background-color: transparent;
-    width: 300px;
-    height: 100px;
-    border-radius: 20px;
-    margin-top: -20px;
+    width: 19rem;
+    height: 8.25rem;
+    border-radius: 1.25rem;
+    margin-top: -2.25rem;
 }
 
 progress {
     width: 0%;
     height: 25%;
-    margin-left: 18px;
-    margin-top: -15px;
-    border-radius: 999px;
-    animation-name: slider_loading;
-    animation-duration: 0.8s;
-    animation-fill-mode: forwards;
-    animation-delay: 0.5s;
+    margin: -1rem 0 0 1rem; /* Top, right, bottom, left */
+    border-radius: 999rem;
+    animation: slider_loading 0.8s forwards 0.5s;
 }
 
 progress::-webkit-progress-bar {
     background-color: #edf2fc;
-    border-radius: 999px;
- }
+    border-radius: 999rem;
+}
  progress::-webkit-progress-value {
     background-color: #97d6ff;
-    border-radius: 999px;
+    border-radius: 999rem;
 }
 
  #contentbackground {
     background-color: white;
-    border-top-left-radius: 20px;
+    border-top-left-radius: 1.25rem;
     height: 53.2em;
-    margin-top: 10px;
-    margin-left: 320px;
+    margin-top: 0.725rem;
+    margin-left: 20em;
  }
 
  #sidebar {
@@ -70,163 +55,127 @@ progress::-webkit-progress-bar {
  }
 
 #randomizebutton {
-    animation-name: button_press_revert;
-    animation-duration: 0.15s;
-    animation-fill-mode: forwards;
+    animation: button_press_revert 0.15s forwards;
     background-color: white;
     border-color: transparent;
-    padding: 1.1em;
+    padding: 1rem;
     float: right;
-    margin-right: 2.5em;
-    border-radius: 999px;
-    font-size: 0.4em;
-    font-family: "DM Sans";
+    margin-right: 1rem;
+    border-radius: 999rem;
+    font: 0.4em "DM Sans";
 }
 
 #randomizebutton:active {
-    animation-name: button_press;
-    animation-duration: 0.15s;
-    animation-fill-mode: forwards;
+    animation: button_press 0.15s forwards;
 }
 
 #debugnotice {
-    background-color: #ffdada;
-    padding: 16px;
-    font-family: "DM Sans";
-    font-weight: bold;
-    margin-right: 1em;
-    border-radius: 0.7000000000000028em;
-    font-size: 0.5em;
+    background-color: #fff2f2;
+    padding: 1rem;
+    font: 0.5em "DM Sans";
+    margin-right: 1rem;
+    border-radius: 0.9rem;
     color: #7d0b0b;
     float: right;
 }
 
-#erroricon {
-    height: 2em;
-    width: 2em;
-    margin-top: -7px;
-    margin-left: -59px;
-    position: fixed;
-}
-
 #more_exercise_tip {
     font-family: "DM Sans", Sans-serif;
-    padding: 10px;
+    padding: 0.625rem;
     margin-left: 5px;
     color: black;
-    background-color: transparent;
-    scale: 1;
 }
 
 #more_steps_tip {
     font-family: "DM Sans", Sans-serif;
-    padding: 10px;
-    margin-left: 5px;
+    padding: 0.625rem;
+    margin-left: 0.3125rem;
     color: black;
-    background-color: transparent;
-    scale: 1;
 }
 
 #more_distance_tip {
     font-family: "DM Sans", Sans-serif;
-    padding: 10px;
-    margin-left: 5px;
+    padding: 0.625rem;
+    margin-left: 0.3125rem;
     color: black;
-    background-color: transparent;
-    scale: 1;
 }
 
 p.progressbartext {
-    margin-left: 260px;
-    margin-top: 3px;
+    margin-left: 16.8rem;
+    margin-top: 0.1875rem;
     font-family: "DM Sans"
 }
 
-h2.tab0 {
-    margin-left: 330px;
-    margin-top: -51px;
-    font-family: "DM Sans";
-    font-weight: normal;
+h2.tab {
+    margin-top: -3.5875rem;
     float: left;
+    font-family: "DM Sans";
 }
 
-h2.tab1 {
-    margin-left: 480px;
-    margin-top: -51px;
-    font-family: "DM Sans";
-    font-weight: normal;
-    float: left;
+#tab0 {
+    margin-left: 20.625rem;
 }
 
-h2.tab2 {
-    margin-left: 600px;
-    margin-top: -51px;
-    font-family: "DM Sans";
-    font-weight: normal;
-    float: left;
+#tab1 {
+    margin-left: 30rem;
+}
+
+#tab2 {
+    margin-left: 37.5rem;
 }
 
 /* Coach podstránka */
 p.backbutton {
     font-family: "DM Sans";
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
 
 div.recipe {
-    width: 300px;
-    padding: 10px;
-    border-radius: 20px;
+    width: 18.75rem;
+    padding: 0.625rem;
+    border-radius: 1.25rem;
     background-color: white;
 }
 
 h2.recipetitle {
-    margin-left: 20px;
+    margin-left: 1.25rem;
     font-family: "DM Sans";
 }
 
 img.recipeimage {
-    height: 200px;
-    width: 300px;
-    border-radius: 15px;
+    height: 12.5rem;
+    width: 18.75rem;
+    border-radius: 0.9rem;
 }
-/*---------------------------*/
 
 /* Ikony */
 #mainicon {
-    margin-bottom: -4px;
-    margin-left: 15px;
-    margin-right: 10px;
+    margin-bottom: -0.25rem;
+    margin-left: 0.9375rem;
+    margin-right: 0.625rem;
     scale: 1.5;
 }
 
 img.inline_icon {
-    margin-bottom: -3px;
+    margin-bottom: -0.1875rem;
 }
 
-#stepscheckmark {
-    height: 32px;
-    width: 32px;
+img.checkmark {
+    height: 1.5em;
+    width: 1.5em;
     margin-bottom: -0.3em;
-    margin-left: 6.2em;
-    background-color: transparent;
+}
+#stepscheckmark {
+    margin-left: 6em;
 }
 
 #distancecheckmark {
-    height: 32px;
-    width: 32px;
-    margin-bottom: -0.3em;
-    margin-left: 4.8em;
+    margin-left: 4.62em;
 }
 
 #azmcheckmark {
-    height: 32px;
-    width: 32px;
-    margin-bottom: -0.3em;
-    margin-left: -0.1em;
+    margin-left: -0.22em;
 }
-
-
-/*---------------------------*/
 
 /* animation */
 @keyframes slider_loading {
@@ -235,8 +184,8 @@ img.inline_icon {
 }
 
 @keyframes generaltitle_loading {
-    from {color: transparent; margin-top: 90px;}
-    to {color: black; margin-top: 28px;}
+    from {color: transparent; margin-top: 5.625rem;}
+    to {color: black; margin-top: 1.75rem;}
 }
 
 @keyframes button_press {
@@ -249,64 +198,44 @@ img.inline_icon {
     to {color: black; background-color: white; scale: 1;}
 }
 
- /*---------------------------*/
-
  /* Mobilní layout */
- 
  @media only screen and (max-width: 1000px) {
     #sidebar {
         float: left;
         width: 100%;
-        margin-top: -15px;
+        margin-top: 0.94rem;
     }
 
     div.fitness_statistics {
         width: 97%;
-        height: 100px;
-        margin-top: 0px;
+        height: 6.25rem;
+        margin-top: 0;
     }
 
     p.progressbartext {
         margin-left: 88%;
-        margin-top: 3px;
+        margin-top: 0.1875rem;
         font-family: "DM Sans"
     }
 
     #contentbackground {
         float: left;
-        margin-right: 0px;
-        margin-left: 0px;
+        margin-right: 0;
+        margin-left: 0;
         width: 100%;
-        margin-top: 50px;
+        margin-top: 3.125rem;
     }
 
     #titlesurroundingbox {
-        height: 60px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    #randomizebutton {
-        border-radius: 10px;
+        height: 3.75rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
     }
 
     #stepscheckmark {
-        height: 32px;
-        width: 32px;
-        margin-bottom: -0.3em;
-        margin-left: 9.2em;
+        margin-left: 0rem;
     }
 
     #distancecheckmark {
-        height: 32px;
-        width: 32px;
-        margin-bottom: -0.3em;
-        margin-left: 7.8em;
-    }
-
-    #azmcheckmark {
-        height: 32px;
-        width: 32px;
-        margin-bottom: -0.3em;
-        margin-left: 2.9em;
+        margin-left: -0.2rem;
     }
 }
