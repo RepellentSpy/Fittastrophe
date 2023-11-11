@@ -1,4 +1,4 @@
-console.log("Verze 2.40")
+console.log("Verze 3.2")
 
 // tlačítko změní všechny hodnoty
 function randomize(){
