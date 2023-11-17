@@ -1,5 +1,3 @@
-console.log("Verze 3.2")
-
 // tlačítko změní všechny hodnoty
 function randomize(){
     steps = Math.random() * 100;
@@ -29,6 +27,9 @@ function randomize(){
 
     // Kontrola fajvek
     checkForGoalComplete();
+
+    // Velký otazník
+    statistics_cookie_save()
 }
 
 function checkForExercise(){
@@ -92,3 +93,10 @@ function checkForGoalComplete() {
         document.getElementById("azmcheckmark").style.scale = 0;
     }
 }
+
+function removetestingbutton() { // Aktuálně nevyužito
+    var element = document.getElementById("randomizebutton");
+    element.parentNode.removeChild(element);
+}
+
+console.log("Verze 3.81")

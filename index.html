@@ -19,7 +19,14 @@
 <body>
     <!-- Page header, contains Title, icon, button and tabs-->
     <header id="titlesurroundingbox">
-        <h1 id="titletext"><img src="icons/mainicon.svg" id="mainicon" width=32 height=32>Fittastrophe<button type="button" id="randomizebutton" onclick="randomize()">Randomize</button><label id="debugnotice">Warning: Value for progress not yet set</label></h1>
+        <h1 id="titletext">
+            <img src="icons/mainicon.svg" id="mainicon" width=32 height=32>
+            Fittastrophe
+            <button type="button" id="randomizebutton" onclick="randomize()">Randomize</button>
+            <button type="button" id="cookiebutton" onclick="cookie_read()">Cookie</button>
+            <label id="debugnotice">Warning: Value for progress not yet set</label></h1>
+        </h1>
+
             <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
             <h2 class="tab" id="tab1"><a href="subpages/coach.html">Coach</a></h2>
             <h2 class="tab" id="tab2"><a href="subpages/profile.html">Your profile</a></h2>
@@ -53,7 +60,7 @@
 
     <!-- Content -->
     <main id="contentbackground">
-        <h2 class="generaltitle">Fitness dashboard</h2>
+        <h2 class="generaltitle" id="dashboardtitle">Fitness dashboard</h2>
 
         <!-- Reminder to take more steps, only appears if stepsprogress < 30%-->
         <div class="lesson">
