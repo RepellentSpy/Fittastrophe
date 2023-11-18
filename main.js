@@ -28,8 +28,15 @@ function randomize(){
     // Kontrola fajvek
     checkForGoalComplete();
 
-    // Velký otazník
-    statistics_cookie_save()
+    // Uloží hodnoty do souborů cookie pro automatické obnovení při načtení stránky
+    saveValuesToCookies();
+}
+
+function saveValuesToCookies() {
+    // Všechny cookies vyprší za 1 den
+    Cookies.set("steps", steps, { expires: 1 });
+    Cookies.set("distance", distance, { expires: 1 });
+    Cookies.set("azm", azm, { expires: 1 });
 }
 
 function checkForExercise(){
@@ -99,4 +106,13 @@ function removetestingbutton() { // Aktuálně nevyužito
     element.parentNode.removeChild(element);
 }
 
-console.log("Verze 3.81")
+console.log("Verze 3.83")
+
+// zkušební funkce
+function cookie_save() {
+    Cookies.set("steps", steps, { expires: 7 }); // Cookie jménem steps má hodnotu variablu steps a vyprší za 7 dní
+}
+
+function cookie_read() {
+    document.getElementById("stepsprogress").value = Cookies.get("steps");
+}
