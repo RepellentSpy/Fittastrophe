@@ -8,14 +8,11 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="icon" type="image/x-icon" href="icons/favicon.svg">
     <script src="main.js"></script>
-    
-    <!-- Google fonts integration -->
+    <!-- Google fonts integration, Icons provided by Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;1,9..40,100&display=swap" rel="stylesheet">
-    <!-- Credit: Icons provided by Google Fonts -->
-
-    <!-- cookie-js -->
+    <!-- js-cookie modul (https://github.com/js-cookie/js-cookie/)-->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 </head>
 
@@ -26,9 +23,8 @@
             <img src="icons/mainicon.svg" id="mainicon" width=32 height=32>
             Fittastrophe
             <button type="button" id="randomizebutton" onclick="randomize()">Randomize</button>
-            <button type="button" id="cookiebutton" onclick="cookie_save()">Cookie</button>
-            <button type="button" id="cookiebutton2" onclick="cookie_read()">Cookie read</button>
-            <label id="debugnotice">Warning: Value for progress not yet set</label></h1>
+            <button type="button" id="Maxpercentbutton" onclick="setAllToMax()">Set all to 100%</button>
+            <label id="debugnotice">Warning: Progress values returned undefined</label></h1>
         </h1>
 
             <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
@@ -39,7 +35,7 @@
      <!-- Sidebar, Steps category -->
      <div id="sidebar">
         <div class="fitness_statistics">
-            <h2 class="generaltitle"><img class="inline_icon" src="icons/Steps.svg">Steps <img src="icons/checkmark.svg" class="checkmark" id="stepscheckmark"></img></h2>
+            <h2 class="generaltitle"><img class="inline_icon" src="icons/Steps.svg">Steps<img src="icons/checkmark.svg" class="checkmark" id="stepscheckmark"></img></h2>
             <label for="steps"></label>
             <progress id="stepsprogress" value="0" max="100"></progress> <!-- random hodnota -->
             <p class="progressbartext" id="stepsprogresstext">0%</p> <!-- popis hodnoty, mění se -->
@@ -47,7 +43,7 @@
 
         <!-- Sidebar, Distance category -->
         <div class="fitness_statistics">
-            <h2 class="generaltitle"><img class="inline_icon" src="icons/Distance.svg">Distance <img src="icons/checkmark.svg" class="checkmark" id="distancecheckmark"></img></h2>
+            <h2 class="generaltitle"><img class="inline_icon" src="icons/Distance.svg">Distance<img src="icons/checkmark.svg" class="checkmark" id="distancecheckmark"></img></h2>
             <label for="distance"></label>
             <progress id="distanceprogress" value="0" max="100"></progress> <!-- random hodnota -->
             <p class="progressbartext" id="distanceprogresstext">0%</p> <!-- popis hodnoty, mění se -->
@@ -55,7 +51,7 @@
 
         <!-- Sidebar, AZM category, AZM = active zone minutes-->
         <div class="fitness_statistics">
-            <h2 class="generaltitle"><img class="inline_icon" src="icons/AZM.svg">Movement minutes <img src="icons/checkmark.svg" class="checkmark" id="azmcheckmark"></img></h2>
+            <h2 class="generaltitle"><img class="inline_icon" src="icons/AZM.svg">Movement minutes<img src="icons/checkmark.svg" class="checkmark" id="azmcheckmark"></img></h2>
             <label for="AZM"></label>
             <progress id="azmprogress" value="0" max="100"></progress> <!-- value controlled by randomize() -->
             <p class="progressbartext" id="azmprogresstext">0%</p> <!-- value description, can change -->

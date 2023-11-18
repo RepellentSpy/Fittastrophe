@@ -26,11 +26,10 @@ div.fitness_statistics {
 }
 
 progress {
-    width: 0%;
+    width: 92%;
     height: 25%;
     margin: -1rem 0 0 1rem; /* Top, right, bottom, left */
     border-radius: 999rem;
-    animation: slider_loading 0.8s forwards 0.5s;
 }
 
 progress::-webkit-progress-bar {
@@ -45,7 +44,7 @@ progress::-webkit-progress-bar {
  #contentbackground {
     background-color: white;
     border-top-left-radius: 1.25rem;
-    height: 53.2em;
+    height: 57.2rem;
     margin-top: 0.725rem;
     margin-left: 20em;
  }
@@ -66,6 +65,21 @@ progress::-webkit-progress-bar {
 }
 
 #randomizebutton:active {
+    animation: button_press 0.15s forwards;
+}
+
+#Maxpercentbutton {
+    animation: button_press_revert 0.15s forwards;
+    background-color: white;
+    border-color: transparent;
+    padding: 1rem;
+    float: right;
+    margin-right: 1rem;
+    border-radius: 999rem;
+    font: 0.4em "DM Sans";
+}
+
+#Maxpercentbutton:active {
     animation: button_press 0.15s forwards;
 }
 
@@ -198,16 +212,6 @@ img.checkmark {
 }
 
 /* animation */
-@keyframes slider_loading {
-    from {width: 0%;}
-    to {width: 92%;}
-}
-
-@keyframes generaltitle_loading {
-    from {color: transparent; margin-top: 5.625rem;}
-    to {color: black; margin-top: 1.75rem;}
-}
-
 @keyframes button_press {
     from {color: black; background-color: white; scale: 1;}
     to {color: white; background-color: gray; scale: 0.89;}
