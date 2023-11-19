@@ -1,4 +1,4 @@
-console.log("Verze 4.75")
+console.log("Verze 4.77")
 
 // Po načtení
 window.onload = function () {
@@ -6,6 +6,7 @@ window.onload = function () {
         cookies_read();
         checkForGoalComplete();
         checkToShowHealthWarnings();
+        document.getElementById("weight").innerHTML = Cookies.get("weight") || "60.2kg"
     } catch (e) { // a toto o onload funkce na "Your Profile" podstránce
         document.getElementById("full_name").innerHTML = Cookies.get("full_name") || "George Washington"; // Zobrazí z cookies jméno uživatele - Vychozí jméno: George Washington
     }
@@ -73,7 +74,7 @@ function display_percentages_sliders() {
 
 function checkToShowHealthWarnings() {
     if (azmprogress.value > 30) { // Varování o málo cvičení
-        document.getElementById("more_exercise_tip").innerHTML = "You need more exercise";
+        document.getElementById("more_exercise_tip").innerHTML = "";
     } else {
         document.getElementById("more_exercise_tip").innerHTML = "You haven't met your exercise goal yet";
     }
@@ -93,21 +94,21 @@ function checkToShowHealthWarnings() {
 
 function checkForGoalComplete() { // Kontrola zda jsou splněny cíle, přidá fajvku
     if (stepsprogress.value >= 99) {
-        document.getElementById("stepscheckmark").style.scale = 1;
+        document.getElementById("stepscheckmark").style.visibility = "visible";
     } else {
-        document.getElementById("stepscheckmark").style.scale = 0;
+        document.getElementById("stepscheckmark").style.visibility = "hidden";
     }
 
     if (distanceprogress.value >= 99) {
-        document.getElementById("distancecheckmark").style.scale = 1;
+        document.getElementById("distancecheckmark").style.visibility = "visible";
     } else {
-        document.getElementById("distancecheckmark").style.scale = 0;
+        document.getElementById("distancecheckmark").style.visibility = "hidden";
     }
 
     if (azmprogress.value >= 99) {
-        document.getElementById("azmcheckmark").style.scale = 1;
+        document.getElementById("azmcheckmark").style.visibility = "visible";
     } else {
-        document.getElementById("azmcheckmark").style.scale = 0;
+        document.getElementById("azmcheckmark").style.visibility = "hidden";
     }
 }
 
@@ -136,7 +137,7 @@ function setAllToMax() {
 }
 
 function name_button() { // Zobrazí po stisknutí tlačítka pole na psaní
-    document.getElementById("name_input").style.animation="name_box_appear 0.2s forwards";
+    document.getElementById("name_input").style.animation = "name_box_appear 0.2s forwards";
     document.getElementById("name_input").style.scale = 1;
     var element = document.getElementById("name_button");
     element.parentNode.removeChild(element);
@@ -146,4 +147,9 @@ function change_name() { // Změní jméno uživatele a uloží do cookies, poto
     var new_name = document.getElementById("name_input").value;
     document.getElementById("full_name").innerHTML = new_name;
     Cookies.set("full_name", new_name, { expires: 7 });
+}
+
+function change_weight() {
+    var new_weight = document.getElementById("weight_input").value;
+    Cookies.set("weight", new_weight + " kg", { expires: 7 });
 }

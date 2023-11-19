@@ -8,7 +8,7 @@ body {
 }
 
 #titletext {
-    font: normal 400 2rem "DM Sans", Sans-serif;
+    font: 400 2rem "DM Sans", Sans-serif;
 }
 
 h2.generaltitle {
@@ -127,6 +127,7 @@ h2.tab {
     margin-top: -3.5875rem;
     float: left;
     font-family: "DM Sans";
+    font-weight: normal;
 }
 
 #tab0 {
@@ -134,7 +135,7 @@ h2.tab {
 }
 
 #tab1 {
-    margin-left: 30rem;
+    margin-left: 30.3rem;
 }
 
 #tab2 {
@@ -246,6 +247,15 @@ img.recipeimage {
     font-family: "DM Sans";
 }
 
+#weight_input {
+    padding: 10px;
+    background-color: white;
+    border-color: transparent;
+    border-radius: 18rem;
+    margin-left: 1.2rem;
+    margin-top: 2rem;
+}
+
 /* Ikony */
 #mainicon {
     margin-bottom: -0.25rem;
@@ -308,7 +318,7 @@ img.checkmark {
     margin-top: 0.5rem;
     margin-left: 1.2rem;
     width: 28rem;
-    height: 3.2rem;
+    height: 3.5rem;
     animation-name: name_button_click_revert;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
