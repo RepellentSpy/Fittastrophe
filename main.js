@@ -1,10 +1,18 @@
-console.log("Verze 4.62")
+console.log("Verze 4.7")
 
 // Po načtení
 window.onload = function() {
-    cookies_read();
-    checkForGoalComplete();
-    checkToShowHealthWarnings();
+    try { // vlastně toto se teď stará o onload funkce "Dashboard" stránku
+        cookies_read();
+        checkForGoalComplete();
+        checkToShowHealthWarnings();
+      } catch (e) { // a toto o onload funkce na "Your Profile" podstránce
+        document.getElementById("full_name").innerHTML = Cookies.get("full_name"); // Zobrazí z cookies jméno uživatele
+      }
+    // Řešení pro problém: JS funkce nefungovala na podstránce "Your Profile", protože funkce z "Dashboard" nebylo
+    // možno vykonat na "Your Profile" kvůli chybějícím id (stepsprogress, distanceprogress, azmprogress), 
+    // tak jsem to nakódoval jako bych chtěl zobrazit errorové hlášení
+    // Do budoucnosti bych toto chtěl vyřešit jinak. Toto je docela hloupé řešení
 };
 
 // Cookies
@@ -64,36 +72,26 @@ function display_percentages_sliders() {
 }
 
 function checkToShowHealthWarnings(){
-    // Varování o málo cvičení
-    if (azmprogress.value > 30) {
-        document.getElementById("more_exercise_tip").innerHTML = ""
-      }
-    
-    if (azmprogress.value < 30) {
-        document.getElementById("more_exercise_tip").innerHTML = "You don't have enough exercise today"
+    if (azmprogress.value > 30) { // Varování o málo cvičení
+        document.getElementById("more_exercise_tip").innerHTML = "You need more exercise";
+    } else {
+        document.getElementById("more_exercise_tip").innerHTML = "You haven't met your exercise goal yet";
     }
 
-    // Varování o málo krocích
-    if (stepsprogress.value > 30) {
-        document.getElementById("more_steps_tip").innerHTML = ""
-      }
-    
-    if (stepsprogress.value < 30) {
-        document.getElementById("more_steps_tip").innerHTML = "You haven't met your step goal yet"
+    if (stepsprogress.value > 30) { // Varování o málo krocích
+        document.getElementById("more_steps_tip").innerHTML = "";
+    } else {
+        document.getElementById("more_steps_tip").innerHTML = "You haven't met your step goal yet";
     }
 
-    // Varování o málo ušlé vzdálenosti
-    if (distanceprogress.value > 30) {
+    if (distanceprogress.value > 30) { // Varování o málo ušlé vzdálenosti
         document.getElementById("more_distance_tip").innerHTML = ""
-      }
-    
-    if (distanceprogress.value < 30) {
-        document.getElementById("more_distance_tip").innerHTML = "You haven't met your distance goal yet"
+    } else {
+        document.getElementById("more_distance_tip").innerHTML = "You haven't met your distance goal yet";
     }
 }
 
-// Kontrola zda jsou kroky dostatečné, přidá fajvku
-function checkForGoalComplete() {
+function checkForGoalComplete() { // Kontrola zda jsou splněny cíle, přidá fajvku
     if (stepsprogress.value >= 99) {
         document.getElementById("stepscheckmark").style.scale = 1;
     } else {
@@ -113,9 +111,11 @@ function checkForGoalComplete() {
     }
 }
 
-function removetestingbutton() { // Aktuálně nevyužito
+function removetestingbutton() { // Skrytá funkce, aktivuje se kliknutím na logo
     var element = document.getElementById("randomizebutton");
     element.parentNode.removeChild(element);
+    var element_two = document.getElementById("Maxpercentbutton");
+    element_two.parentNode.removeChild(element_two);
 }
 
 function setAllToMax() {
@@ -133,4 +133,16 @@ function setAllToMax() {
     removeMissingValueWarning();
     saveValuesToCookies();
     checkToShowHealthWarnings();
+}
+
+function name_button() { // Zobrazí po stisknutí tlačítka pole na psaní
+    document.getElementById("name_input").style.scale = 1;
+    var element = document.getElementById("name_button");
+    element.parentNode.removeChild(element);
+}
+
+function change_name() { // Změní jméno uživatele a uloží do cookies, potom nahoře ve window.onload se jméno obnovuje
+    var new_name = document.getElementById("name_input").value;
+    document.getElementById("full_name").innerHTML = new_name;
+    Cookies.set("full_name", new_name, { expires: 7 });
 }
