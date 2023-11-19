@@ -1,14 +1,14 @@
-console.log("Verze 4.7")
+console.log("Verze 4.75")
 
 // Po načtení
-window.onload = function() {
+window.onload = function () {
     try { // vlastně toto se teď stará o onload funkce "Dashboard" stránku
         cookies_read();
         checkForGoalComplete();
         checkToShowHealthWarnings();
-      } catch (e) { // a toto o onload funkce na "Your Profile" podstránce
-        document.getElementById("full_name").innerHTML = Cookies.get("full_name"); // Zobrazí z cookies jméno uživatele
-      }
+    } catch (e) { // a toto o onload funkce na "Your Profile" podstránce
+        document.getElementById("full_name").innerHTML = Cookies.get("full_name") || "George Washington"; // Zobrazí z cookies jméno uživatele - Vychozí jméno: George Washington
+    }
     // Řešení pro problém: JS funkce nefungovala na podstránce "Your Profile", protože funkce z "Dashboard" nebylo
     // možno vykonat na "Your Profile" kvůli chybějícím id (stepsprogress, distanceprogress, azmprogress), 
     // tak jsem to nakódoval jako bych chtěl zobrazit errorové hlášení
@@ -33,7 +33,7 @@ function saveValuesToCookies() {
 }
 
 // tlačítko změní všechny hodnoty na náhodné číslo
-function randomize(){
+function randomize() {
     steps = Math.random() * 100;
     distance = Math.random() * 100;
     azm = Math.random() * 100;
@@ -45,7 +45,7 @@ function randomize(){
 
     // Poznámka do konzole - tady mi AI od Googlu pomohlo se zaokrouhlením
     console.log(""); // prázdno pro oddělení od ostatních konzolových sdělení
-    console.log("hodnoty změněny na", Math.round(steps),",", Math.round(distance),",", Math.round(azm));
+    console.log("hodnoty změněny na", Math.round(steps), ",", Math.round(distance), ",", Math.round(azm));
 
     saveValuesToCookies();          // 1 Uloží hodnoty do souborů cookie pro automatické obnovení při načtení stránky
     display_percentages_sliders();  // 2 Zobrazí procentuální hodnotu cvičení (zaokrouhleno)
@@ -71,7 +71,7 @@ function display_percentages_sliders() {
     document.getElementById("distanceprogresstext").innerHTML = Math.round(distanceprogress.value) + "%";
 }
 
-function checkToShowHealthWarnings(){
+function checkToShowHealthWarnings() {
     if (azmprogress.value > 30) { // Varování o málo cvičení
         document.getElementById("more_exercise_tip").innerHTML = "You need more exercise";
     } else {
@@ -136,6 +136,7 @@ function setAllToMax() {
 }
 
 function name_button() { // Zobrazí po stisknutí tlačítka pole na psaní
+    document.getElementById("name_input").style.animation="name_box_appear 0.2s forwards";
     document.getElementById("name_input").style.scale = 1;
     var element = document.getElementById("name_button");
     element.parentNode.removeChild(element);

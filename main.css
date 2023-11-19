@@ -175,11 +175,12 @@ div.iconcircle {
     margin-left: -1.05rem;
 }
 
-div.big_colorful_header {
+div.profile_header {
     padding: 1.5rem;
     font-family: "DM Sans";
     background: linear-gradient(to right, #f8fdf9, #cde9e3);
-    border-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    border-top-left-radius: 1.2rem;
     margin-left: 1.2rem;
     margin-right: 65rem;
     height: 10rem;
@@ -233,6 +234,15 @@ img.recipeimage {
 
 #name_input {
     scale: 0;
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+    width: 27.5rem;
+    height: 3.2rem;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    border-color: transparent;
+    text-align: center;
+    font-family: "DM Sans";
 }
 
 /* Ikony */
@@ -287,7 +297,44 @@ img.checkmark {
     margin-top: -0.8rem;
 }
 
+#name_button {
+    background-color: white;
+    border-color: transparent;
+    padding: 0.7rem;
+    font-family: "DM Sans";
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 1.2rem;
+    width: 28rem;
+    height: 3.2rem;
+    animation-name: name_button_click_revert;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+#name_button:active {
+    animation-name: name_button_click;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
 /* animation */
+@keyframes name_box_appear {
+    from {background-color: transparent; margin-top: -1rem;}
+    to {background-color: white; margin-top: 0.5rem;}
+}
+
+@keyframes name_button_click {
+    from {background-color: white; scale: 1;}
+    to {background-color: #f0f9f5; scale: 0.95;}
+}
+
+@keyframes name_button_click_revert {
+    from {background-color: #f0f9f5; scale: 0.95;}
+    to {background-color: white; scale: 1;}
+}
+
 @keyframes button_press {
     from {
         color: black;
