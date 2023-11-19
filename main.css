@@ -35,12 +35,12 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-    background-color: #edf2fc;
+    background-color: #cae0dc;
     border-radius: 999rem;
 }
 
 progress::-webkit-progress-value {
-    background-color: #97d6ff;
+    background-color: #068675;
     border-radius: 999rem;
 }
 
@@ -223,12 +223,13 @@ img.recipeimage {
 }
 
 ::-webkit-scrollbar {
-    height: 0.8rem;
-    border: 1px solid #d5d5d5;
+    height: 0.65rem;
+    background-color: whitesmoke;
+    border: 1px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(209, 225, 228);
+    background-color: #cae0dc;
     border-radius: 999rem;
 }
 
