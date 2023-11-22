@@ -8,10 +8,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="icon" type="image/x-icon" href="icons/favicon.svg">
     <script src="main.js"></script>
-    <!-- Google fonts integration, Icons provided by Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;1,9..40,100&display=swap" rel="stylesheet">
     <!-- js-cookie modul (https://github.com/js-cookie/js-cookie/)-->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 </head>
@@ -22,10 +18,9 @@
         <h1 id="titletext">
             <img src="icons/mainicon.svg" id="mainicon" width=32 height=32 onclick="removetestingbutton()">
             Fittastrophe
-            <button type="button" id="randomizebutton" onclick="randomize()">Randomize</button>
-            <button type="button" id="Maxpercentbutton" onclick="setAllToMax()">Set all to 100%</button>
             <label id="debugnotice">Warning: Progress values returned undefined</label></h1>
         </h1>
+        <button onclick="open_debug()" class="debug_button" id="open_debug_button">Debug Menu</button>
 
             <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
             <h2 class="tab" id="tab1"><a href="subpages/coach.html">Coach</a></h2>
@@ -58,11 +53,22 @@
         </div>
     </div>
 
-    <!-- Content -->
-    <main id="contentbackground">
+    <main id="contentbackground"> <!-- Content -->
+        
+        <div id="debug_menu"> <!-- Debug menu -->
+            <h2 id="debug_title">Debug menu 
+                <button id="close_debug_button" onclick="close_debug()">X</button>
+            </h2>
+            <button type="button" id="randomizebutton" class="debug_button" onclick="randomize()">Randomize values</button>
+            <button type="button" id="Maxpercentbutton" class="debug_button" onclick="setAllToMax()">Set values to 100%</button>
+            <input type="range" min="0" max="100" value=0 id="steps_debug_slider" class="debug_slider" oninput="debug_stepsChange()">
+            <input type="range" min="0" max="100" value=0 id="distance_debug_slider" class="debug_slider" oninput="debug_distanceChange()">
+            <input type="range" min="0" max="100" value=0 id="azm_debug_slider" class="debug_slider" oninput="debug_azmChange()">
+        </div>
+
         <h2 class="generaltitle" id="dashboardtitle">Fitness dashboard</h2>
 
-        <div class="statistic">
+        <div class="statistic"> <!-- Weight chip -->
             <div class="iconcircle">
                 <img src="icons/weight.svg" id="weighticon">
             </div>
@@ -70,21 +76,16 @@
             <h2 id="weight">60.2kg</h2>
         </div>
         
-        
-        <!-- Reminder to take more steps, only appears if stepsprogress < 30%-->
-        <div class="lesson">
+        <div class="lesson"> <!-- Reminder to take more steps, only appears if stepsprogress < 30%-->
             <h2 id="more_steps_tip"></h2>
         </div>
 
-        <!-- Reminder to walk more distance, only appears if distanceprogress < 30%-->
-        <div class="lesson">
+        <div class="lesson"> <!-- Reminder to walk more distance, only appears if distanceprogress < 30%-->
             <h2 id="more_distance_tip"></h2>
         </div>
 
-        <!-- Reminder to do more exercise, only appears if azmprogress < 30%-->
-        <div class="lesson">
+        <div class="lesson"> <!-- Reminder to do more exercise, only appears if azmprogress < 30%-->
             <h2 id="more_exercise_tip"></h2>
         </div>
     </main>
-
 </body>

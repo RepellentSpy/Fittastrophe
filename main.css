@@ -1,3 +1,7 @@
+/* Import z Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&family=Exo+2:wght@100;200;300;400;500;600;800;900&display=swap');
+
 /* Hlavní prvky */
 body {
     background-color: #eff1ee;
@@ -54,46 +58,6 @@ progress::-webkit-progress-value {
 
 #sidebar {
     float: left;
-}
-
-#randomizebutton {
-    animation: button_press_revert 0.15s forwards;
-    background-color: white;
-    border-color: transparent;
-    padding: 1rem;
-    float: right;
-    margin-right: 1rem;
-    border-radius: 999rem;
-    font: 0.4em "DM Sans";
-}
-
-#randomizebutton:active {
-    animation: button_press 0.15s forwards;
-}
-
-#Maxpercentbutton {
-    animation: button_press_revert 0.15s forwards;
-    background-color: white;
-    border-color: transparent;
-    padding: 1rem;
-    float: right;
-    margin-right: 1rem;
-    border-radius: 999rem;
-    font: 0.4em "DM Sans";
-}
-
-#Maxpercentbutton:active {
-    animation: button_press 0.15s forwards;
-}
-
-#debugnotice {
-    background-color: #fff2f2;
-    padding: 1rem;
-    font: 0.5em "DM Sans";
-    margin-right: 1rem;
-    border-radius: 0.9rem;
-    color: #7d0b0b;
-    float: right;
 }
 
 #more_exercise_tip {
@@ -251,9 +215,93 @@ img.recipeimage {
     padding: 10px;
     background-color: white;
     border-color: transparent;
-    border-radius: 18rem;
     margin-left: 1.2rem;
     margin-top: 2rem;
+    width: 26.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+#age_input {
+    padding: 10px;
+    background-color: white;
+    border-color: transparent;
+    margin-left: 1.2rem;
+    margin-top: 0.3rem;
+    width: 26.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+#weight_indicator {
+    float: right;
+    z-index: 10;
+}
+
+#debug_menu {
+    background-color: #e8e8e8;
+    width: 20rem;
+    height: 10rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    float: right;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    white-space: collapse;
+    visibility: hidden; /* změna při open_debug() */
+}
+
+#debug_title {
+    font-family: "Exo 2";
+    font-weight: normal;
+    margin-left: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+button.debug_button {
+    animation: button_press_revert 0.15s forwards;
+    background-color: white;
+    border-color: transparent;
+    padding: 1rem;
+    float: left;
+    border-radius: 0.8rem;
+    font: 0.8rem "Exo 2";
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+#open_debug_button {
+    float: right;
+    margin-top: -4.2rem;
+}
+
+#close_debug_button {
+    font-family: "DM Sans";
+    font-weight: bolder;
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 8.5rem;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button.debug_button:active {
+    animation: button_press 0.15s forwards;
+}
+
+#debugnotice {
+    background-color: #fff2f2;
+    padding: 1rem;
+    font: 0.5em "DM Sans";
+    margin-right: 1rem;
+    border-radius: 0.9rem;
+    color: #7d0b0b;
+    float: right;
+}
+
+#age_easter_egg { /* Nezapomenout dodělat */
+    visibility: visible;
 }
 
 /* Ikony */
@@ -336,6 +384,26 @@ img.checkmark {
     to {background-color: white; margin-top: 0.5rem;}
 }
 
+@keyframes checkmark_appear {
+    from {scale: 0; filter: grayscale(1);}
+    to {scale: 1; filter: grayscale(0);}
+}
+
+@keyframes checkmark_disappear {
+    from {scale: 1; filter: grayscale(0);}
+    to {scale: 0; filter: grayscale(1);}
+}
+
+@keyframes debug_appear {
+    from {opacity: 0; margin-top: -1rem; scale: 0.98; margin-right: 0.5rem; height: 8rem;}
+    to {opacity: 1; margin-top: 0rem; scale:1; margin-right: 1rem;}
+}
+
+@keyframes debug_disappear {
+    from {opacity: 1; margin-top: 0rem; scale:1; margin-right: 1rem;}
+    to {opacity: 0; margin-top: -1rem; scale: 0.98; margin-right: 0.5rem; height: 8rem;}
+}
+
 @keyframes name_button_click {
     from {background-color: white; scale: 1;}
     to {background-color: #f0f9f5; scale: 0.95;}
@@ -347,31 +415,13 @@ img.checkmark {
 }
 
 @keyframes button_press {
-    from {
-        color: black;
-        background-color: white;
-        scale: 1;
-    }
-
-    to {
-        color: white;
-        background-color: gray;
-        scale: 0.89;
-    }
+    from {color: black; background-color: white;scale: 1;}
+    to {color: white; background-color: gray; scale: 0.89;}
 }
 
 @keyframes button_press_revert {
-    from {
-        color: white;
-        background-color: gray;
-        scale: 0.89;
-    }
-
-    to {
-        color: black;
-        background-color: white;
-        scale: 1;
-    }
+    from {color: white; background-color: gray; scale: 0.89;}
+    to {color: black; background-color: white; scale: 1;}
 }
 
 /* Mobilní layout */

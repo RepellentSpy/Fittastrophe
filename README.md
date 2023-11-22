@@ -10,6 +10,7 @@
 <ul>
   <li>HTML rozvržení</li>
   <li>CSS styly</li>
+  <li>CSS Animace</li>
   <li>JavaScript funkce, které mění části HTML</li>
   <li>Mobilní zobrazení (nedokončeno)</li>
   <li>Ukládání a čtení souborů cookies</li>

@@ -36,8 +36,14 @@
     </div>
 
     <div id="changeweight">
-        <input oninput="change_weight()" type="text" id="weight_input" placeholder="Enter weight"></input>
+        <input onblur="change_weight()" type="number" id="weight_input" min="0" max="1000" placeholder="Change weight (kg)"></input>
+    </div>
+    <div id="changeage">
+        <input oninput="change_age()" type="number" id="age_input" max="133" min="1" placeholder="Change age (1-100)"></input>
     </div>
 
-
+    <h2 id="age_easter_egg">Gratulujeme! Překonali jste rekord nejstaršího člověka na světě!</h2>
+    <div>
+        <h2 class="generaltitle" id="weight_indicator">0 kg</h2>
+    </div>
 </body>

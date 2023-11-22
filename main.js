@@ -1,4 +1,4 @@
-console.log("Verze 4.77")
+console.log("Verze 4.8.3")
 
 // Po načtení
 window.onload = function () {
@@ -9,6 +9,7 @@ window.onload = function () {
         document.getElementById("weight").innerHTML = Cookies.get("weight") || "60.2kg"
     } catch (e) { // a toto o onload funkce na "Your Profile" podstránce
         document.getElementById("full_name").innerHTML = Cookies.get("full_name") || "George Washington"; // Zobrazí z cookies jméno uživatele - Vychozí jméno: George Washington
+        document.getElementById("weight_indicator").innerHTML = Cookies.get("weight");
     }
     // Řešení pro problém: JS funkce nefungovala na podstránce "Your Profile", protože funkce z "Dashboard" nebylo
     // možno vykonat na "Your Profile" kvůli chybějícím id (stepsprogress, distanceprogress, azmprogress), 
@@ -23,6 +24,11 @@ function cookies_read() {
     document.getElementById("azmprogress").value = Cookies.get("azm");
     display_percentages_sliders();
     removeMissingValueWarning();
+
+    // Aplikovat uložené hodnoty na debug slidery
+    document.getElementById("steps_debug_slider").value = Cookies.get("steps")
+    document.getElementById("distance_debug_slider").value = Cookies.get("distance")
+    document.getElementById("azm_debug_slider").value = Cookies.get("azm")
 }
 
 function saveValuesToCookies() {
@@ -30,7 +36,7 @@ function saveValuesToCookies() {
     Cookies.set("steps", steps, { expires: 1 }); // Cookie jménem steps má hodnotu variablu steps a vyprší za 1 den
     Cookies.set("distance", distance, { expires: 1 });
     Cookies.set("azm", azm, { expires: 1 });
-    console.log("uloženo do cookies")
+    console.log("uloženo do cookies");
 }
 
 // tlačítko změní všechny hodnoty na náhodné číslo
@@ -55,21 +61,15 @@ function randomize() {
     removeMissingValueWarning();    // 5 Odebere varování o chybících hodnotách
 }
 
-function removeMissingValueWarning() {
-    // odebere varování
+function removeMissingValueWarning() { // odebere varování
     document.getElementById("debugnotice").innerHTML = "";
     document.getElementById("debugnotice").style.backgroundColor = "transparent";
 }
 
 function display_percentages_sliders() {
-    // zobrazení procentuální hodnoty cvičení
-    document.getElementById("azmprogresstext").innerHTML = Math.round(azmprogress.value) + "%";
-
-    // zobrazení procentuální hodnoty kroků
-    document.getElementById("stepsprogresstext").innerHTML = Math.round(stepsprogress.value) + "%";
-
-    // zobrazení procentuální hodnoty vzdálenosti
-    document.getElementById("distanceprogresstext").innerHTML = Math.round(distanceprogress.value) + "%";
+    document.getElementById("azmprogresstext").innerHTML = Math.round(azmprogress.value) + "%";  // zobrazení procentuální hodnoty cvičení
+    document.getElementById("stepsprogresstext").innerHTML = Math.round(stepsprogress.value) + "%"; // zobrazení procentuální hodnoty kroků
+    document.getElementById("distanceprogresstext").innerHTML = Math.round(distanceprogress.value) + "%"; // zobrazení procentuální hodnoty vzdálenosti
 }
 
 function checkToShowHealthWarnings() {
@@ -92,23 +92,23 @@ function checkToShowHealthWarnings() {
     }
 }
 
-function checkForGoalComplete() { // Kontrola zda jsou splněny cíle, přidá fajvku
-    if (stepsprogress.value >= 99) {
-        document.getElementById("stepscheckmark").style.visibility = "visible";
+function checkForGoalComplete() { // Kontrola zda jsou splněny cíle, přidá fajvku pokud ano
+    if (stepsprogress.value >= 100) {
+        document.getElementById("stepscheckmark").style.animation = "checkmark_appear 0.3s forwards";
     } else {
-        document.getElementById("stepscheckmark").style.visibility = "hidden";
+        document.getElementById("stepscheckmark").style.animation = "checkmark_disappear 0.3s forwards";
     }
 
-    if (distanceprogress.value >= 99) {
-        document.getElementById("distancecheckmark").style.visibility = "visible";
+    if (distanceprogress.value >= 100) {
+        document.getElementById("distancecheckmark").style.animation = "checkmark_appear 0.3s forwards";
     } else {
-        document.getElementById("distancecheckmark").style.visibility = "hidden";
+        document.getElementById("distancecheckmark").style.animation = "checkmark_disappear 0.3s forwards";
     }
 
-    if (azmprogress.value >= 99) {
-        document.getElementById("azmcheckmark").style.visibility = "visible";
+    if (azmprogress.value >= 100) {
+        document.getElementById("azmcheckmark").style.animation = "checkmark_appear 0.3s forwards";
     } else {
-        document.getElementById("azmcheckmark").style.visibility = "hidden";
+        document.getElementById("azmcheckmark").style.animation = "checkmark_disappear 0.3s forwards";
     }
 }
 
@@ -151,5 +151,58 @@ function change_name() { // Změní jméno uživatele a uloží do cookies, poto
 
 function change_weight() {
     var new_weight = document.getElementById("weight_input").value;
-    Cookies.set("weight", new_weight + " kg", { expires: 7 });
+    if (new_weight > 20) {
+        Cookies.set("weight", new_weight + " kg", { expires: 7 });
+        document.getElementById("weight_indicator").innerHTML = new_weight + " kg";
+    } else {
+        alert("Error: Weight not set, weight is too low");
+    }
+}
+
+function open_debug() {
+    const debugMenu = document.getElementById('debug_menu');
+    const currentVisibility = debugMenu.style.visibility;
+    if (currentVisibility === 'visible') {
+      close_debug();
+    } else {
+      debugMenu.style.visibility = 'visible';
+      document.getElementById("debug_menu").style.animation = "debug_appear 0.5s forwards";
+    }
+}
+  
+function close_debug() {
+    document.getElementById("debug_menu").style.animation = "debug_disappear 0.5s forwards";
+    setTimeout(function() {
+        document.getElementById("debug_menu").style.visibility = "hidden";
+    }, 500);      
+}
+
+function debug_stepsChange() {
+    var debug_stepsOverride_value = document.getElementById("steps_debug_slider").value;
+    document.getElementById("stepsprogress").value = debug_stepsOverride_value;
+    document.getElementById("stepsprogresstext").innerHTML = debug_stepsOverride_value + "%";
+    Cookies.set("steps", debug_stepsOverride_value);
+    removeMissingValueWarning();
+    checkToShowHealthWarnings();
+    checkForGoalComplete();
+}
+
+function debug_distanceChange() {
+    var debug_distanceOverride_value = document.getElementById("distance_debug_slider").value;
+    document.getElementById("distanceprogress").value = debug_distanceOverride_value;
+    document.getElementById("distanceprogresstext").innerHTML = debug_distanceOverride_value + "%";
+    Cookies.set("distance", debug_distanceOverride_value);
+    removeMissingValueWarning();
+    checkToShowHealthWarnings();
+    checkForGoalComplete();
+}
+
+function debug_azmChange() {
+    var debug_azmOverride_value = document.getElementById("azm_debug_slider").value;
+    document.getElementById("azmprogress").value = debug_azmOverride_value;
+    document.getElementById("azmprogresstext").innerHTML = debug_azmOverride_value + "%";
+    Cookies.set("azm", debug_azmOverride_value);
+    removeMissingValueWarning();
+    checkToShowHealthWarnings();
+    checkForGoalComplete();
 }
