@@ -395,13 +395,13 @@ img.checkmark {
 }
 
 @keyframes debug_appear {
-    from {opacity: 0; margin-top: -1rem; scale: 0.98; margin-right: 0.5rem; height: 8rem;}
+    from {opacity: 0; margin-top: -1rem; scale: 0.95; margin-right: 0.5rem;}
     to {opacity: 1; margin-top: 0rem; scale:1; margin-right: 1rem;}
 }
 
 @keyframes debug_disappear {
     from {opacity: 1; margin-top: 0rem; scale:1; margin-right: 1rem;}
-    to {opacity: 0; margin-top: -1rem; scale: 0.98; margin-right: 0.5rem; height: 8rem;}
+    to {opacity: 0; margin-top: -1rem; scale: 0.95; margin-right: 0.5rem;}
 }
 
 @keyframes name_button_click {
@@ -444,17 +444,62 @@ img.checkmark {
         font-family: "DM Sans"
     }
 
+    #tabs {
+        margin-left: -18rem;
+        margin-top: 48rem;
+        font-size: 0.7rem;
+        position: fixed;
+        z-index: 4;
+    }
+
+    #tabsbackground {
+        visibility: visible;
+        height: 6.2rem;
+        margin-top: 43rem;
+        background-color: #f7f7f7;
+        position: sticky;
+        z-index: 3;
+    }
+
+    #tab0 {
+        margin-left: 21rem;
+    }
+
+    #tab1 {
+        margin-left: 28.3rem;
+    }
+
+    #tab2 {
+        margin-left: 33.7rem;
+    }
+
+    #debug_menu {
+        position: absolute;
+        z-index: 2;
+        float: left;
+        margin-left: 5%;
+    }
+
     #contentbackground {
         float: left;
         margin-right: 0;
         margin-left: 0;
         width: 100%;
-        margin-top: 3.125rem;
+        margin-top: 1.8rem;
+        border-top-left-radius: 1.25rem;
+        border-top-right-radius: 1.25rem;
+    }
+
+    p.progressbartext {
+        margin-top: 0.2875rem;
+    }
+
+    #sidebar {
+        margin-top: -1rem;
     }
 
     #titlesurroundingbox {
         height: 3.75rem;
-        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
     }
 
     #stepscheckmark {
@@ -463,5 +508,19 @@ img.checkmark {
 
     #distancecheckmark {
         margin-left: -0.2rem;
+    }
+
+    #titletext {
+        text-align: center;
+        margin-left: -32px; /* Šířka ikony, která v mobilním zobrazení není přítomna */
+    }
+
+    #mainicon {
+        visibility: hidden;
+    }
+
+    #open_debug_button {
+        margin-top: 2rem;
+        position: absolute;
     }
 }
