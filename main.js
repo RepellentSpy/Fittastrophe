@@ -163,18 +163,18 @@ function open_debug() {
     const debugMenu = document.getElementById('debug_menu');
     const currentVisibility = debugMenu.style.visibility;
     if (currentVisibility === 'visible') {
-      close_debug();
+        close_debug();
     } else {
-      debugMenu.style.visibility = 'visible';
-      document.getElementById("debug_menu").style.animation = "debug_appear 0.5s forwards";
+        debugMenu.style.visibility = 'visible';
+        document.getElementById("debug_menu").style.animation = "debug_appear 0.5s forwards";
     }
 }
-  
+
 function close_debug() {
     document.getElementById("debug_menu").style.animation = "debug_disappear 0.5s forwards";
-    setTimeout(function() {
+    setTimeout(function () {
         document.getElementById("debug_menu").style.visibility = "hidden";
-    }, 500);      
+    }, 500);
 }
 
 function debug_stepsChange() {
@@ -205,4 +205,15 @@ function debug_azmChange() {
     removeMissingValueWarning();
     checkToShowHealthWarnings();
     checkForGoalComplete();
+}
+
+function clearAllValues() {
+    // změnit hodnoty progress barů
+    document.getElementById("stepsprogress").value = 0;
+    document.getElementById("distanceprogress").value = 0;
+    document.getElementById("azmprogress").value = 0;
+    Cookies.remove("steps");
+    Cookies.remove("distance");
+    Cookies.remove("azm");
+    window.location.reload();
 }
