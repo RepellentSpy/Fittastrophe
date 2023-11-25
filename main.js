@@ -1,8 +1,8 @@
-console.log("Verze 4.8.3")
+console.log("Verze 4.8.5")
 
 // Po načtení
 window.onload = function () {
-    try { // vlastně toto se teď stará o onload funkce "Dashboard" stránku
+    try { // toto se stará o onload funkce "Dashboard" stránku
         cookies_read();
         checkForGoalComplete();
         checkToShowHealthWarnings();
@@ -11,10 +11,7 @@ window.onload = function () {
         document.getElementById("full_name").innerHTML = Cookies.get("full_name") || "George Washington"; // Zobrazí z cookies jméno uživatele - Vychozí jméno: George Washington
         document.getElementById("weight_indicator").innerHTML = Cookies.get("weight");
     }
-    // Řešení pro problém: JS funkce nefungovala na podstránce "Your Profile", protože funkce z "Dashboard" nebylo
-    // možno vykonat na "Your Profile" kvůli chybějícím id (stepsprogress, distanceprogress, azmprogress), 
-    // tak jsem to nakódoval jako bych chtěl zobrazit errorové hlášení
-    // Do budoucnosti bych toto chtěl vyřešit jinak. Toto je docela hloupé řešení
+    // Občas to hodí chybu, ale to je umýsl. Do budoucnosti bych toto chtěl vyřešit jinak. Toto je hloupé řešení.
 };
 
 // Cookies
@@ -166,12 +163,12 @@ function open_debug() {
         close_debug();
     } else {
         debugMenu.style.visibility = 'visible';
-        document.getElementById("debug_menu").style.animation = "debug_appear 0.5s forwards";
+        document.getElementById("debug_menu").style.animation = "debug_appear 0.3s forwards";
     }
 }
 
 function close_debug() {
-    document.getElementById("debug_menu").style.animation = "debug_disappear 0.5s forwards";
+    document.getElementById("debug_menu").style.animation = "debug_disappear 0.3s forwards";
     setTimeout(function () {
         document.getElementById("debug_menu").style.visibility = "hidden";
     }, 500);

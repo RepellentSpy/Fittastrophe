@@ -241,7 +241,7 @@ img.recipeimage {
 #debug_menu {
     background-color: #e8e8e8;
     width: 20rem;
-    height: 10rem;
+    height: 11rem;
     margin-right: 1rem;
     margin-top: 0.5rem;
     float: right;
@@ -249,6 +249,10 @@ img.recipeimage {
     padding: 1rem;
     white-space: collapse;
     visibility: hidden; /* změna při open_debug() */
+}
+
+#clearvaluesbutton {
+    margin-top: 0.5rem;
 }
 
 #debug_title {
@@ -294,12 +298,12 @@ button.debug_button:active {
     background-color: #fff2f2;
     padding: 1rem;
     font: 0.5em "DM Sans";
-    margin-right: 1rem;
+    margin-right: 9rem;
+    margin-top: -0.3rem;
     border-radius: 0.9rem;
     color: #7d0b0b;
     float: right;
 }
-
 #age_easter_egg { /* Nezapomenout dodělat */
     visibility: visible;
 }
