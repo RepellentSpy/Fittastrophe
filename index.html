@@ -21,17 +21,24 @@
             <label id="debugnotice">No data found</label></h1>
         </h1>
         <button onclick="open_debug()" class="debug_button" id="open_debug_button">Debug Menu</button>
-
-        <div id="tabs"> <!-- Textové záložky -->
-            <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
-            <h2 class="tab" id="tab1"><a href="subpages/coach.html">Coach</a></h2>
-            <h2 class="tab" id="tab2"><a href="subpages/profile.html">Your profile</a></h2>
-        </div>
-
-        <div id="tabsbackground" visibility="hidden">
-
-        </div>
     </header>
+    <div id="tabs"> <!-- Textové záložky -->
+        <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
+        <h2 class="tab" id="tab1"><a href="subpages/coach.html">Coach</a></h2>
+        <h2 class="tab" id="tab2"><a href="subpages/profile.html">Your profile</a></h2>
+    </div>
+
+    <div id="mobiletabs">
+        <div class="mobiletab0">Dashboard</div>
+        <div class="mobiletab1">Coach</div>
+        <div class="mobiletab2">Your Profile</div>
+    </div>
+
+    <div id="mobiletabs">
+        <div class="mobiletab"></div>
+        <div class="mobiletab"></div>
+        <div class="mobiletab"></div>
+    </div>
 
      <!-- Sidebar, Steps category -->
      <div id="sidebar">
@@ -59,8 +66,7 @@
         </div>
     </div>
 
-    <main id="contentbackground"> <!-- Content -->
-        
+    <main id="contentbackground"> <!-- Velká obsahová plocha -->
         <div id="debug_menu"> <!-- Debug menu -->
             <h2 id="debug_title">Debug menu 
                 <button id="close_debug_button" onclick="close_debug()">X</button>
@@ -94,5 +100,5 @@
         <div class="lesson"> <!-- Reminder to do more exercise, only appears if azmprogress < 30%-->
             <h2 id="more_exercise_tip"></h2>
         </div>
-    </main>
+    </main> <!-- Konec velké obsahové plochy-->
 </body>
