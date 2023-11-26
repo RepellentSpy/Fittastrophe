@@ -8,11 +8,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
     <link rel="icon" type="image/x-icon" href="../icons/favicon.svg">
     <script src="../main.js"></script>
-
-    <!-- Google fonts integration, Icons provided by Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;1,9..40,100&display=swap" rel="stylesheet">
+    <!-- js-cookie modul (https://github.com/js-cookie/js-cookie/)-->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 </head>
 <body>
     <header id="titlesurroundingbox">
@@ -20,74 +17,103 @@
         <p class="backbutton"><a href="../index.html">Back to dashboard</a></p>
     </header>
 
-    <!-- Title -->
+    <!-- Healthy eating title -->
     <h2 class="generaltitle">Healthy eating</h2>
 
-    <!-- 10 Recipe carousel -->
-    <div id="recipescarousel">
+    <!-- 10 Receptů carousel -->
+    <section id="recipescarousel"> <!-- info: sectíon je semantic divu -->
 
-        <!-- Recipe 1-->
-        <div class="recipe">
+        <!-- Recept 1-->
+        <article class="recipe">
             <img src="../images/cucumber.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.allrecipes.com/recipes/1083/fruits-and-vegetables/vegetables/cucumber/">Cucumber</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 2-->
-        <div class="recipe">
+        <!-- Recept 2-->
+        <article class="recipe">
             <img src="../images/rice.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.delish.com/cooking/recipe-ideas/g129/rice-recipes/">Rice</a></a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 3-->
-        <div class="recipe">
+        <!-- Recept 3-->
+        <article class="recipe">
             <img src="../images/salad.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.loveandlemons.com/salad-recipes/">Salad</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 4-->
-        <div class="recipe">
+        <!-- Recept 4-->
+        <article class="recipe">
             <img src="../images/fruit.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.allrecipes.com/recipes/1058/fruits-and-vegetables/fruits/">Fruits</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 5-->
-        <div class="recipe">
+        <!-- Recept 5-->
+        <article class="recipe">
             <img src="../images/vegetables.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.allrecipes.com/recipes/1059/fruits-and-vegetables/vegetables/">Vegetables</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 6-->
-        <div class="recipe">
+        <!-- Recept 6-->
+        <article class="recipe">
             <img src="../images/meat.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.delish.com/cooking/nutrition/g3209/healthy-high-protein/">Healthy meat</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 7-->
-        <div class="recipe">
+        <!-- Recept 7-->
+        <article class="recipe">
             <img src="../images/milkshake.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.delish.com/cooking/g1504/milkshake-recipes/">Milkshakes</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 8-->
-        <div class="recipe">
+        <!-- Recept 8-->
+        <article class="recipe">
             <img src="../images/schnitzel.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.cooklikeczechs.com/czech-rizek-traditional-breaded-pork-chops/">Schnitzel</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 9-->
-        <div class="recipe">
+        <!-- Recept 9-->
+        <article class="recipe">
             <img src="../images/mango.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.bonappetit.com/recipes/slideshow/mango-recipes">Mango</a></h2>
-        </div>
+        </article>
 
-        <!-- Recipe 10-->
-        <div class="recipe">
+        <!-- Recept 10-->
+        <article class="recipe">
             <img src="../images/apples.jpg" class="recipeimage">
             <h2 class="recipetitle"><a href="https://www.bonappetit.com/recipes/slideshow/mango-recipes">Apples</a></h2>
-        </div>
+        </section>   
 
-    </div>
-       
-</body>
+    <h2 class="generaltitle">Health Articles</h2>
+    <section id="articles">
+        <article class="article">
+            <h2 class="article_title">Tips to get better sleep</h2>
+            <img src="../icons/arrow_forward.svg" class="article_forward" id="arrow_forward" onclick="arrow_forward_animate(); article_viewer_relay_sleep()"> <!-- Animuje při kliknutí -->
+        </article>
+    </section>
 
+
+    <h2 class="generaltitle">Exercise videos by Fitbit</h2>
+    <section id="exercise_videos_grid"> <!-- Info: main je semantic divu -->
+        <article class="exercise_video"> <!-- Video 1 -->
+            <img src="../images/full-body.jpg" class="exerciseimage">
+            <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=9g4vDnmyhxA&list=PL_xLGCqFuhiE4-N8HWKxw8c7JG_0r6lzA">Full-body Classes</a></h2>
+        </article>
+
+        <article class="exercise_video"> <!-- Video 2 -->
+            <img src="../images/quick-classes.jpg" class="exerciseimage">
+            <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=rryt9VN7TC8&list=PL_xLGCqFuhiER6SfBroqlSDzbTC39QLGw">Quick Classes</a></h2>
+        </article>
+
+        <article class="exercise_video">
+            <img src="../images/fitbitbanner.png" class="exerciseimage">
+            <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=lUqMH4v1lo4&list=PL_xLGCqFuhiEHivIUm6dArRgVgWNfR-GX">Focused Classes</a></h2>
+        </article>
+
+        <article class="exercise_video">
+            <img src="../images/home-exercises.webp" class="exerciseimage">
+            <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=-Fg4r7RP_PQ&list=PL_xLGCqFuhiEZaogjM02yCOhtyDpX_5Gq">At Home Classes</a></h2>
+        </article>
+    </section>
+
+    </body>
 </html>

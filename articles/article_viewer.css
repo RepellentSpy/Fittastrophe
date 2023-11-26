@@ -1,0 +1,12 @@
+body {
+    background-color: #dbeeef;
+    height: 100%;
+    width: 100%;
+}
+
+#article_container {
+    height: 100%;
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+}

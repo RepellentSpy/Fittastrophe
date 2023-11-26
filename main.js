@@ -1,4 +1,4 @@
-console.log("Verze 4.8.5")
+console.log("#️⃣ Verze 4.8.7 Main")
 
 // Po načtení
 window.onload = function () {
@@ -178,7 +178,7 @@ function debug_stepsChange() {
     var debug_stepsOverride_value = document.getElementById("steps_debug_slider").value;
     document.getElementById("stepsprogress").value = debug_stepsOverride_value;
     document.getElementById("stepsprogresstext").innerHTML = debug_stepsOverride_value + "%";
-    Cookies.set("steps", debug_stepsOverride_value);
+    Cookies.set("steps", debug_stepsOverride_value, { expires: 7 });
     removeMissingValueWarning();
     checkToShowHealthWarnings();
     checkForGoalComplete();
@@ -188,7 +188,7 @@ function debug_distanceChange() {
     var debug_distanceOverride_value = document.getElementById("distance_debug_slider").value;
     document.getElementById("distanceprogress").value = debug_distanceOverride_value;
     document.getElementById("distanceprogresstext").innerHTML = debug_distanceOverride_value + "%";
-    Cookies.set("distance", debug_distanceOverride_value);
+    Cookies.set("distance", debug_distanceOverride_value, { expires: 7 });
     removeMissingValueWarning();
     checkToShowHealthWarnings();
     checkForGoalComplete();
@@ -198,7 +198,7 @@ function debug_azmChange() {
     var debug_azmOverride_value = document.getElementById("azm_debug_slider").value;
     document.getElementById("azmprogress").value = debug_azmOverride_value;
     document.getElementById("azmprogresstext").innerHTML = debug_azmOverride_value + "%";
-    Cookies.set("azm", debug_azmOverride_value);
+    Cookies.set("azm", debug_azmOverride_value, { expires: 7 });
     removeMissingValueWarning();
     checkToShowHealthWarnings();
     checkForGoalComplete();
@@ -213,4 +213,15 @@ function clearAllValues() {
     Cookies.remove("distance");
     Cookies.remove("azm");
     window.location.reload();
+}
+
+function arrow_forward_animate() {
+    document.getElementById("arrow_forward").style.animation = "arrow_cycle 1.1s forwards";
+    setTimeout(function () {
+        window.location.href = "../articles/article.html";
+    }, 300);
+}
+
+function article_viewer_relay_sleep() {
+    Cookies.set("selected_article", "sleep", { expires: 7 })
 }
