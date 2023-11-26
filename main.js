@@ -1,4 +1,30 @@
-console.log("Verze 4.8.5")
+console.log("Verze EX-FB 4.8.5")
+
+// Firebase
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC6wxUMr5kNGpnUiUR2SzvdA-fy0E0ZKB4",
+  authDomain: "fitness-app-2fd94.firebaseapp.com",
+  projectId: "fitness-app-2fd94",
+  storageBucket: "fitness-app-2fd94.appspot.com",
+  messagingSenderId: "1043677228262",
+  appId: "1:1043677228262:web:d5f2143c78e626835d9f27",
+  measurementId: "G-WSJYCF1VWM"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+//////////////////////////////////
+
 
 // Po načtení
 window.onload = function () {
