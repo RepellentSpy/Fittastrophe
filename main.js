@@ -217,6 +217,9 @@ function clearAllValues() {
 
 function arrow_forward_animate() {
     document.getElementById("arrow_forward").style.animation = "arrow_cycle 1.1s forwards";
+    document.body.style.animation = "scale_out 0.5s forwards";
+    document.getElementById("sleep_article").style.animation = "special_article1_expand 0.65s forwards";
+    document.getElementById("sleep_article_title").style.visibility = "hidden"
     setTimeout(function () {
         window.location.href = "../articles/article_viewer.html";
     }, 300);

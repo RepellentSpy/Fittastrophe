@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Fittastrophe coach</title>
+    <title>Fittastrophe Coach</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
     <link rel="icon" type="image/x-icon" href="../icons/favicon.svg">
@@ -15,6 +15,12 @@
     <header id="titlesurroundingbox">
         <h1 id="titletext"><img src="../icons/mainicon.svg" id="mainicon" width=32 height=32>Fittastrophe Coach</h1>
         <p class="backbutton"><a href="../index.html">Back to dashboard</a></p>
+        <div id="tabs_subpage"> <!-- Textové záložky -->
+            <h2 class="tab_subpage" id="tab0_subpage"><a href="../index.html">Dashboard</a></h2>
+            <h2 class="tab_subpage" id="tab1_subpage"><a href="coach.html">Coach</a></h2>
+            <h2 class="tab_subpage" id="tab2_subpage"><a href="profile.html">Your profile</a></h2>
+            <div id="selected_tab_indicator_coach"></div>
+        </div>
     </header>
 
     <!-- Healthy eating title -->
@@ -85,8 +91,8 @@
 
     <h2 class="generaltitle">Health Articles</h2>
     <section id="articles">
-        <article class="article">
-            <h2 class="article_title">Tips to get better sleep</h2>
+        <article class="article" id="sleep_article" onclick="arrow_forward_animate()">
+            <h2 class="article_title" id="sleep_article_title" onclick="arrow_forward_animate()">Tips to get better sleep</h2>
             <img src="../icons/arrow_forward.svg" class="article_forward" id="arrow_forward" onclick="arrow_forward_animate(); article_viewer_relay_sleep()"> <!-- Animuje při kliknutí -->
         </article>
     </section>

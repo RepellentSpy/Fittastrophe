@@ -23,15 +23,18 @@
             Fittastrophe
             <label id="debugnotice">No data found</label></h1>
         </h1>
-        <button onclick="open_debug()" class="debug_button" id="open_debug_button">Debug Menu</button>
-    </header>
-    <div id="tabs"> <!-- Textové záložky -->
-        <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
-        <h2 class="tab" id="tab1"><a href="subpages/coach.html">Coach</a></h2>
-        <h2 class="tab" id="tab2"><a href="subpages/profile.html">Your profile</a></h2>
-    </div>
 
-    <div id="mobiletabs">
+        <button onclick="open_debug()" class="debug_button" id="open_debug_button">Debug Menu</button>
+        
+        <div id="tabs"> <!-- Textové záložky -->
+            <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
+            <h2 class="tab" id="tab1"><a href="subpages/coach.html">Coach</a></h2>
+            <h2 class="tab" id="tab2"><a href="subpages/profile.html">Your profile</a></h2>
+            <div class="selected_tab_indicator"></div>
+        </div>
+    </header>
+
+    <div id="mobiletabs"> <!-- Aktuálně se nepoužívá, později bude -->
         <div class="mobiletab0">Dashboard</div>
         <div class="mobiletab1">Coach</div>
         <div class="mobiletab2">Your Profile</div>
