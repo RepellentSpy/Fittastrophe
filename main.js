@@ -259,7 +259,7 @@ function arrow_forward_animate() {
     document.body.style.animation = "scale_out 0.5s forwards"; // Zbytek obrazovky se oddálí
     setTimeout(function () { // po 100 ms se zvětší kliknutý článek
         document.getElementById("sleep_article").style.animation = "special_article1_expand 0.8s forwards";
-    }, 100);
+    }, 130);
     document.getElementById("sleep_article_title").style.visibility = "hidden" // Nadpis článku se schová, aby animace vypadala lépe
     setTimeout(function () {
         window.location.href = "../articles/article_viewer.html"; // po 280 ms přejde na čtečku článků, kde si práci přebere article_viewer.js
