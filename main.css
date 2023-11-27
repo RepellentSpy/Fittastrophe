@@ -12,6 +12,7 @@ body {
     animation-name: startup;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    position: relative;
 }
 
 ::-webkit-scrollbar {
@@ -579,6 +580,11 @@ img.checkmark {
         -webkit-overflow-scrolling: touch;
     }
 
+    html, body { /* Záplata na scrolovací problém */
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
     #sidebar {
         float: left;
         width: 100%;
@@ -612,9 +618,50 @@ img.checkmark {
 
     #mobiletabs {
         visibility: visible;
-        background-color: yellow;
-        display: flex;
+        background-color: #eff1ee;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        margin: 0 auto;
+        width: 100%;
+        height: 12%;
+        font-family: "DM Sans";
+    }
+
+    #mobiletabtexts {
+        width: 10rem;
+        height: 1rem;
+        display: grid;
         justify-content: center;
+    }
+
+    #mobiletab0 {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-left: -25%;
+        margin-top: 3.5rem;
+        z-index: 4;
+    }
+
+    #mobiletab1 {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 3.5rem;
+        z-index: 4;
+    }
+
+    #mobiletab2 {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 3.5rem;
+        margin-left: 25%;
+        z-index: 4;
     }
 
     #contentbackground {
@@ -632,7 +679,7 @@ img.checkmark {
     }
 
     #sidebar {
-        margin-top: -1rem;
+        margin-top: -4rem;
     }
 
     #titlesurroundingbox {
