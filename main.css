@@ -832,4 +832,12 @@ img.checkmark {
         color: rgb(58, 58, 58);
         z-index: 5;
     }
+
+    #tabs_subpage {
+        visibility: hidden;
+    }
+
+    p.backbutton {
+        visibility: hidden;
+    }
 }
