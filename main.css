@@ -488,6 +488,7 @@ img.checkmark {
     margin-left: 0.2rem;
     scale: 1.2;
     margin-top: 0.2rem;
+    z-index: 1;
 }
 
 #mainiconsettings {
@@ -626,6 +627,11 @@ img.checkmark {
         overflow-x: hidden;
     }
 
+    #dashboardtitle {
+        visibility: hidden;
+        position: absolute;
+    }
+
     #sidebar {
         float: left;
         width: 100%;
@@ -667,32 +673,35 @@ img.checkmark {
         width: 100%;
         height: 12%;
         font-family: "DM Sans";
+        z-index: 2;
     }
 
     #mobiletabtexts {
-        width: 10rem;
-        height: 1rem;
         display: grid;
         justify-content: center;
+        margin-top: -0.5rem;
     }
 
     #mobiletab0 {
         position: absolute;
-        display: flex;
+        display: relative;
         width: 100%;
         justify-content: center;
-        margin-left: -25%;
+        margin-left: -30%;
         margin-top: 3.5rem;
-        z-index: 4;
+        z-index: 5;
+        font-size: 0.95rem;
     }
 
     #mobiletab1 {
         position: absolute;
         display: flex;
-        width: 100%;
+        width: 10%;
         justify-content: center;
         margin-top: 3.5rem;
-        z-index: 4;
+        z-index: 5;
+        font-size: 0.95rem;
+        margin-left: 45%;
     }
 
     #mobiletab2 {
@@ -701,8 +710,26 @@ img.checkmark {
         width: 100%;
         justify-content: center;
         margin-top: 3.5rem;
-        margin-left: 25%;
+        margin-left: 30%;
         z-index: 4;
+        font-size: 0.95rem;
+    }
+
+    #profile_mobile_icon {
+        margin-top: -2rem;
+        margin-left: -2.1rem;
+    }
+
+    #coach_mobile_icon {
+        margin-top: -1.8rem;
+        margin-left: -2.1rem;
+    }
+
+    #dashboard_mobile_icon {
+        margin-left: -3rem;
+        position: absolute;
+        margin-top: -1.75rem;
+        z-index: 6;
     }
 
     #contentbackground {
@@ -710,9 +737,11 @@ img.checkmark {
         margin-right: 0;
         margin-left: 0;
         width: 100%;
+        height: 40rem;
         margin-top: 1.8rem;
         border-top-left-radius: 1.25rem;
         border-top-right-radius: 1.25rem;
+        position: relative;
     }
 
     p.progressbartext {
@@ -774,13 +803,33 @@ img.checkmark {
         position: static;
         padding: 0.5rem;
         margin-left: 78%;
-        margin-top: -4.3rem;
-        height: 3rem;
-        width: 5.8rem;
+        margin-top: -4rem;
+        height: 2.8rem;
+        width: 3.8rem;
+        font-size: 0.6rem;
     }
 
     h2.generaltitle {
         padding: 0.8%;
         margin-left: 2.5%;
+    }
+
+    #statistic_chips {
+        margin-top: 1rem;
+    }
+
+    #BMI_chip {
+        margin-left: 5%;
+        margin-top: 1rem;
+    }
+
+    #weight_chip {
+        margin-left: 5%;
+        margin-top: 1rem;
+    }
+
+    a {
+        color: rgb(58, 58, 58);
+        z-index: 5;
     }
 }
