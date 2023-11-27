@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 </head>
 
-<body>
+<body id="profile">
     <header id="titlesurroundingbox">
         <h1 id="titletext"><img src="../icons/mainicon.svg" id="mainicon" width=32 height=32>Fittastrophe Profile</h1>
         <p class="backbutton"><a href="../index.html">Back to dashboard</a></p>
@@ -38,12 +38,12 @@
     <div id="changeweight">
         <input onblur="change_weight()" type="number" id="weight_input" min="0" max="1000" placeholder="Change weight (kg)"></input>
     </div>
-    <div id="changeage">
-        <input oninput="change_age()" type="number" id="age_input" max="133" min="1" placeholder="Change age (1-100)"></input>
+    <div id="changeheight">
+        <input onblur="change_height()" type="number" id="height_input" max="500" min="1" placeholder="Change height (cm)"></input>
     </div>
 
-    <h2 id="age_easter_egg">Gratulujeme! Překonali jste rekord nejstaršího člověka na světě!</h2>
     <div>
-        <h2 class="generaltitle" id="weight_indicator">0 kg</h2>
+        <h2 class="generaltitle" id="weight_indicator">Weight: 0 kg</h2>
+        <h2 class="generaltitle" id="height_indicator">Height: 0 cm</h2>
     </div>
 </body>

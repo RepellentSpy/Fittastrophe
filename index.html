@@ -15,11 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 </head>
 
-<body>
+<body class="dashboard">
     <!-- Page header, contains Title, icon, button and tabs-->
     <header id="titlesurroundingbox">
         <h1 id="titletext">
-            <img src="icons/mainicon.svg" id="mainicon" width=32 height=32 onclick="removetestingbutton()">
+            <img src="icons/mainicon.svg" id="mainicon" width=32 height=32>
             Fittastrophe
             <label id="debugnotice">No data found</label></h1>
         </h1>
@@ -83,12 +83,20 @@
 
         <h2 class="generaltitle" id="dashboardtitle">Fitness dashboard</h2>
 
-        <div class="statistic"> <!-- Weight chip -->
-            <div class="iconcircle">
+        <div class="statistic" id="weight_chip"> <!-- Weight chip -->
+            <div class="iconcircle" id="weight_circle">
                 <img src="icons/weight.svg" id="weighticon">
             </div>
             <h2 id="weighttitle">Weight</h2>
             <h2 id="weight">60.2kg</h2>
+        </div>
+
+        <div class="statistic" id="BMI_chip"> <!-- BMI chip -->
+            <div class="iconcircle" id="BMI_circle">
+                <img src="icons/chart.svg" id="weighticon">
+            </div>
+            <h2 id="bmititle" onclick="calculateBMI()">BMI</h2>
+            <h2 id="bmi">8.8</h2>
         </div>
         
         <div class="lesson"> <!-- Reminder to take more steps, only appears if stepsprogress < 30%-->

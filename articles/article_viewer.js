@@ -1,5 +1,5 @@
 // JavaScript pro tuto podstránku je v jiném souboru, aby to nedělalo v hlavním moc velký bordel
-console.log("#️⃣ Article Viewer v0.12")
+console.log("#️⃣ Article Viewer v0.3")
 
 window.onload = function() {
     checkWhichArticleToShow();

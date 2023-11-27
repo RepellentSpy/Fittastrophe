@@ -7,12 +7,15 @@ body {
     background-color: #eff1ee;
     padding: 0;
     margin: 0;
-    overflow: scroll;
-    /* hides scrollbar */
+    overflow: hidden;
     animation-name: startup;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     position: relative;
+}
+
+body.coach {
+    overflow: scroll;
 }
 
 ::-webkit-scrollbar {
@@ -173,6 +176,12 @@ div.statistic {
     margin-right: 39rem;
     font-family: "DM Sans";
     width: 11.2rem;
+    white-space: nowrap;
+}
+
+#BMI_chip {
+    margin-left: 17rem;
+    margin-top: -5.7rem;
 }
 
 div.iconcircle {
@@ -194,6 +203,19 @@ div.iconcircle {
 }
 
 #weighttitle {
+    margin-top: 4.3rem;
+    margin-left: -1.05rem;
+}
+
+#bmi {
+    margin-top: -1.2rem;
+    font-weight: normal;
+    font-size: 1.15rem;
+    margin-bottom: 0.625rem;
+    margin-left: -1.05rem;
+}
+
+#bmititle {
     margin-top: 4.3rem;
     margin-left: -1.05rem;
 }
@@ -277,6 +299,8 @@ h2.recipetitle {
     margin-left: 1.25rem;
     font-family: "Exo 2";
     font-weight: 600;
+    cursor: pointer;
+    color: #004455;
 }
 
 img.recipeimage {
@@ -332,7 +356,7 @@ img.exerciseimage {
     border-top-right-radius: 0.5rem;
 }
 
-#age_input {
+#height_input {
     padding: 10px;
     background-color: white;
     border-color: transparent;
@@ -344,8 +368,15 @@ img.exerciseimage {
 }
 
 #weight_indicator {
-    float: right;
-    z-index: 10;
+    float: left;
+    margin-top: -25rem;
+    margin-left: 31rem;
+}
+
+#height_indicator {
+    float: left;
+    margin-top: -22rem;
+    margin-left: 31.1rem;
 }
 
 #debug_menu {
@@ -414,6 +445,11 @@ button.debug_button:active {
     color: #7d0b0b;
     float: right;
 }
+
+input.debug_slider {
+    accent-color: #068675;
+}
+
 #age_easter_egg { /* Nezapomenout dodělat */
     visibility: visible;
 }
@@ -556,13 +592,18 @@ img.checkmark {
 
 @keyframes scale_out {
     from {scale: 1; opacity: 1;}
-    to {scale: 0.98; opacity: 0;}
+    to {scale: 0.96; opacity: 0.8;}
 }
 
 @keyframes special_article1_expand {
-    0% {color: black; scale: 1;}
-    50% {margin-left: 50rem;}
-    100% {scale: 11; margin-left: 100rem;}
+    0% {scale: 1;}
+    50% {margin-left: 70rem;}
+    100% {scale: 20; margin-left: 100rem; margin-top: -20rem;}
+}
+
+@keyframes redirect_animation {
+    from {opacity: 1; scale: 1;}
+    to {opacity: 0; scale: 0.95;}
 }
 
 /* Mobilní layout */
