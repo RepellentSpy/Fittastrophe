@@ -165,6 +165,9 @@ div.selected_tab_indicator {
     background-color: #54818b;
     margin-left: 20.7rem;
     margin-top: -1.4rem;
+    animation-name: change_tab_animation_backwards;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
 }
 
 div.statistic {
@@ -530,7 +533,12 @@ img.checkmark {
 }
 /* animation */
 @keyframes change_tab_animation {
-    from {margin-left: 23.4rem;}
+    from {margin-left: 23.4rem; width: 4.5rem;}
+    to {}
+}
+
+@keyframes change_tab_animation_backwards {
+    from {margin-left: 33.4rem; width: 4.5rem;}
     to {}
 }
 
