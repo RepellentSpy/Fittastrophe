@@ -112,3 +112,21 @@ body {
         opacity: 1;
     }
 }
+
+@media only screen and (max-width: 1018px) {
+    #article_container {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    #article_space {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    #backbutton {
+        position: fixed;
+        margin-top: -1.7rem;
+        margin-left: 1.35rem;
+    }
+}
