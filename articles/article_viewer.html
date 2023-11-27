@@ -12,10 +12,16 @@
     <!-- Proč jsou všechny články v jednom html souboru? A proč to dělám takhle? Chtěl jsem si to vyzkoušet -->
 
 <body>
+    <p id="backbutton" onclick="arrow_forward_animate()">
+        <img src="../icons/arrow_forward.svg" class="article_forward" id="arrow_forward" onclick="arrow_forward_animate()">
+        Back to Coach
+    </p>
+
     <main id="article_container">
-        <p class="backbutton"><a href="../index.html">Back to dashboard</a></p>
-        <h2 id="reader_article_title">Article Title</h2>
-        <p id="reader_article_content">Article text</p>
+        <div id="article_space">
+            <h2 id="reader_article_title"></h2> <!-- Název článku -->
+            <p id="reader_article_content"></p> <!-- Obsah článku -->
+        </div>
 
     </main>
 

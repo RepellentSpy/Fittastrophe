@@ -218,7 +218,7 @@ function clearAllValues() {
 function arrow_forward_animate() {
     document.getElementById("arrow_forward").style.animation = "arrow_cycle 1.1s forwards";
     setTimeout(function () {
-        window.location.href = "../articles/article.html";
+        window.location.href = "../articles/article_viewer.html";
     }, 300);
 }
 
