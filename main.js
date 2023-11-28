@@ -309,3 +309,15 @@ function calculateBMI() {
         document.getElementById("BMI_circle").style.backgroundColor = "rgb(249 190 190)"; // Změna barvy pozadí podle statusu BMI
     }
 }
+
+function toggleDarkMode() { // Aktuálně rozpracováno a nevyužito
+    if (document.getElementById("darkmode_toggle").value == "off") { // Dark mode
+        document.getElementById("darkmode_toggle").value = "on";
+        document.body.style.backgroundColor = "black";
+        document.getElementById("contentbackground").style.backgroundColor = "#1e1e1e";
+    } else {
+        document.getElementById("darkmode_toggle").value = "off"; // Light mode
+        document.body.style.backgroundColor = "#eff1ee";
+        document.getElementById("contentbackground").style.backgroundColor = "white";
+    }
+}

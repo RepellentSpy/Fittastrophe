@@ -610,6 +610,7 @@ img.checkmark {
     to {opacity: 0; scale: 0.95;}
 }
 
+
 /* Mobilní layout */
 @media only screen and (max-width: 1018px) {
     html {
