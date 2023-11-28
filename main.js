@@ -1,8 +1,9 @@
-console.log("#️⃣ Verze 4.9.2 Main")
+console.log("#️⃣ Verze 4.9.3 Main")
 
 // Po načtení
 window.onload = function () {
     try { // toto se stará o onload funkce "Dashboard" stránky
+        show_nodata_warning() // Zkontroluje zda jsou definovaná data, pokud ne, ukáže uživateli varování
         cookies_read(); // zkontroluje hodnoty uložené v cookies a aplikuje je to na fitness statistiky
         checkForGoalComplete(); // Zkontroluje zda jsou splněny cíle, přidá fajvku pokud ano
         checkToShowHealthWarnings(); // Zkontroluje zda zobrazit nějaké doporučení (více kroků atd)
@@ -319,5 +320,26 @@ function toggleDarkMode() { // Aktuálně rozpracováno a nevyužito
         document.getElementById("darkmode_toggle").value = "off"; // Light mode
         document.body.style.backgroundColor = "#eff1ee";
         document.getElementById("contentbackground").style.backgroundColor = "white";
+    }
+}
+
+function show_nodata_warning() {
+    if (Cookies.get("steps") === undefined && Cookies.get("distance") === undefined && Cookies.get("azm") === undefined) {
+        document.getElementById("no_data_big_warning").style.visibility = "visible";
+        document.getElementById("no_data_background").style.visibility = "visible";
+    } else {
+        close_warning();
+    }
+}
+
+function close_warning() {
+    var remove_element_one = document.getElementById("no_data_big_warning");
+    if (remove_element_one) {
+        remove_element_one.parentNode.removeChild(remove_element_one);
+    }
+
+    var remove_element_two = document.getElementById("no_data_background");
+    if (remove_element_two) {
+        remove_element_two.parentNode.removeChild(remove_element_two);
     }
 }

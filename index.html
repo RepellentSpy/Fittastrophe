@@ -26,7 +26,7 @@
             <label id="debugnotice">No data found</label>
         </h1>
 
-        <button onclick="open_debug()" class="debug_button" id="open_debug_button">Debug Menu</button>
+        <button onclick="open_debug()" class="debug_button" id="open_debug_button">Set Data</button>
         
         <div id="tabs"> <!-- Textové záložky -->
             <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
@@ -56,7 +56,6 @@
             </div>
         </div>
     </div>
-
      <!-- Sidebar, Steps category -->
      <div id="sidebar">
         <div class="fitness_statistics">
@@ -83,6 +82,16 @@
         </div>
     </div>
 
+    <div id="no_data_background"></div>
+    <div id="no_data_big_warning">
+        <h2 class="generaltitle">Vítejte v Fittastrophe</h2>
+        <p class="warning_text"><b>Aktuálně nemáte zadaná žádná data</b></p>
+        <p class="warning_text">Kroky, vzdálenost a cvik lze kdykoli nastavit v pravém horním rohu použitím tlačítka "Set Data"</p>
+        <p class="warning_text">Výšku a váhu pro výpočet BMI lze nastavit v záložce "Your Profile"</p>
+        <p class="close_warning_button" onclick="close_warning()">X</p>
+        <button id="warning_understood_button" onclick="close_warning()">Pochopeno</button>
+    </div>
+
     <main id="contentbackground"> <!-- Velká obsahová plocha -->
         <div id="debug_menu"> <!-- Debug menu -->
             <h2 id="debug_title">Debug menu 
@@ -104,7 +113,7 @@
                     <img src="icons/weight.svg" alt="Weight icon" id="weighticon">
                 </div>
                 <h2 id="weighttitle">Weight</h2>
-                <h2 id="weight">60.2kg</h2>
+                <h2 id="weight">No Data</h2>
             </div>
 
             <div class="statistic" id="BMI_chip"> <!-- BMI chip -->
@@ -112,7 +121,7 @@
                     <img src="icons/chart.svg" alt="BMI Icon" id="bmiicon">
                 </div>
                 <h2 id="bmititle" onclick="calculateBMI()">BMI</h2>
-                <h2 id="bmi">8.8</h2>
+                <h2 id="bmi">No Data</h2>
             </div>
         </div>
         
