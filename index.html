@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <!-- Akreditace: Ikony pochází z Google Fonts, tento projekt využívá modul js-cookie (https://github.com/js-cookie/js-cookie/) -->
 <!-- Barevné schéma UI projektu inspirováno aplikací Fitbit od společnosti Google. Žádná uvedená videa nebo články nejsou moje vlastní -->
 <!-- Tento projekt využívá Google Fonts pro fonty a ikony-->
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fittastrophe Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <link rel="icon" type="image/x-icon" href="icons/favicon.svg">
     <script src="main.js"></script>
     <!-- js-cookie modul (https://github.com/js-cookie/js-cookie/)-->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <!-- Google Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 </head>
 
 <body class="dashboard">
     <!-- Page header, contains Title, icon, button and tabs-->
     <header id="titlesurroundingbox">
         <h1 id="titletext">
-            <img src="icons/mainicon.svg" id="mainicon" width=32 height=32>
+            <img src="icons/mainicon.svg" id="mainicon" alt="Fittastrophe Icon" width=32 height=32>
             Fittastrophe
-            <label id="debugnotice">No data found</label></h1>
+            <label id="debugnotice">No data found</label>
         </h1>
 
         <button onclick="open_debug()" class="debug_button" id="open_debug_button">Debug Menu</button>
@@ -42,10 +42,10 @@
                 <a href="index.html">Dashboard</a>
                 <span class="material-symbols-outlined" id="dashboard_mobile_icon">health_metrics</span>
             </div>
-            <a href="subpages/coach.html"><div id="mobiletab1">
+            <div id="mobiletab1">
                 <a href="subpages/coach.html">Coach</a>
                 <span class="material-symbols-outlined" id="coach_mobile_icon">assignment</span>
-            </div></a>
+            </div>
             <div id="mobiletab2">
                 <a href="subpages/profile.html">Profile</a>
                 <span class="material-symbols-outlined" id="profile_mobile_icon">badge</span>
@@ -56,7 +56,7 @@
      <!-- Sidebar, Steps category -->
      <div id="sidebar">
         <div class="fitness_statistics">
-            <h2 class="generaltitle"><img class="inline_icon" src="icons/Steps.svg">Steps<img src="icons/checkmark.svg" class="checkmark" id="stepscheckmark"></img></h2>
+            <h2 class="generaltitle"><img class="inline_icon" alt="Steps icon" src="icons/Steps.svg">Steps<img src="icons/checkmark.svg" alt="Goal complete checkmark" class="checkmark" id="stepscheckmark"></h2>
             <label for="steps"></label>
             <progress id="stepsprogress" value="0" max="100"></progress> <!-- random hodnota -->
             <p class="progressbartext" id="stepsprogresstext">0%</p> <!-- popis hodnoty, mění se -->
@@ -64,7 +64,7 @@
 
         <!-- Sidebar, Distance category -->
         <div class="fitness_statistics">
-            <h2 class="generaltitle"><img class="inline_icon" src="icons/Distance.svg">Distance<img src="icons/checkmark.svg" class="checkmark" id="distancecheckmark"></img></h2>
+            <h2 class="generaltitle"><img class="inline_icon" src="icons/Distance.svg" alt="distance icon">Distance<img src="icons/checkmark.svg" alt="Goal complete checkmark" class="checkmark" id="distancecheckmark"></h2>
             <label for="distance"></label>
             <progress id="distanceprogress" value="0" max="100"></progress> <!-- random hodnota -->
             <p class="progressbartext" id="distanceprogresstext">0%</p> <!-- popis hodnoty, mění se -->
@@ -72,7 +72,7 @@
 
         <!-- Sidebar, AZM category, AZM = active zone minutes-->
         <div class="fitness_statistics">
-            <h2 class="generaltitle"><img class="inline_icon" src="icons/AZM.svg">Movement minutes<img src="icons/checkmark.svg" class="checkmark" id="azmcheckmark"></img></h2>
+            <h2 class="generaltitle"><img class="inline_icon" alt="Movement minutes icon" src="icons/AZM.svg">Movement minutes<img src="icons/checkmark.svg" alt="Goal complete checkmark" class="checkmark" id="azmcheckmark"></h2>
             <label for="AZM"></label>
             <progress id="azmprogress" value="0" max="100"></progress> <!-- value controlled by randomize() -->
             <p class="progressbartext" id="azmprogresstext">0%</p> <!-- value description, can change -->
@@ -97,7 +97,7 @@
         <div id="statistic_chips">
             <div class="statistic" id="weight_chip"> <!-- Weight chip -->
                 <div class="iconcircle" id="weight_circle">
-                    <img src="icons/weight.svg" id="weighticon">
+                    <img src="icons/weight.svg" alt="Weight icon" id="weighticon">
                 </div>
                 <h2 id="weighttitle">Weight</h2>
                 <h2 id="weight">60.2kg</h2>
@@ -105,7 +105,7 @@
 
             <div class="statistic" id="BMI_chip"> <!-- BMI chip -->
                 <div class="iconcircle" id="BMI_circle">
-                    <img src="icons/chart.svg" id="weighticon">
+                    <img src="icons/chart.svg" alt="BMI Icon" id="bmiicon">
                 </div>
                 <h2 id="bmititle" onclick="calculateBMI()">BMI</h2>
                 <h2 id="bmi">8.8</h2>

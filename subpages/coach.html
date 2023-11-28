@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fittastrophe Coach</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.svg">
     <script src="../main.js"></script>
     <!-- js-cookie modul (https://github.com/js-cookie/js-cookie/)-->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <!-- Google Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 </head>
 <body class="coach">
     <header id="titlesurroundingbox">
-        <h1 id="titletext"><img src="../icons/mainicon.svg" id="mainicon" width=32 height=32>Fittastrophe Coach</h1>
+        <h1 id="titletext"><img src="../icons/mainicon.svg" alt="Fittastrophe logo" id="mainicon" width=32 height=32>Fittastrophe Coach</h1>
         <p class="backbutton"><a href="../index.html">Back to dashboard</a></p>
         <div id="tabs_subpage"> <!-- Textové záložky -->
             <h2 class="tab_subpage" id="tab0_subpage"><a href="../index.html">Dashboard</a></h2>
@@ -31,10 +31,10 @@
                 <a href="../index.html">Dashboard</a>
                 <span class="material-symbols-outlined" id="dashboard_mobile_icon">health_metrics</span>
             </div>
-            <a href="coach.html"><div id="mobiletab1">
+            <div id="mobiletab1">
                 <a href="coach.html">Coach</a>
                 <span class="material-symbols-outlined" id="coach_mobile_icon">assignment</span>
-            </div></a>
+            </div>
             <div id="mobiletab2">
                 <a href="profile.html">Profile</a>
                 <span class="material-symbols-outlined" id="profile_mobile_icon">badge</span>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <!-- Healthy eating title -->
+    <!-- Nadpis sekce s recepty -->
     <h2 class="generaltitle">Healthy eating</h2>
 
     <!-- 10 Receptů carousel -->
@@ -50,69 +50,70 @@
 
         <!-- Recept 1-->
         <article class="recipe">
-            <img src="../images/cucumber.jpg" class="recipeimage">
-            <h2 class="recipetitle" onclick="redirect('https://www.allrecipes.com/recipes/1083/fruits-and-vegetables/vegetables/cucumber/')">Cucumber</a></h2>
+            <img src="../images/cucumber.jpg" alt="cucumbers" class="recipeimage">
+            <h2 class="recipetitle" onclick="redirect('https://www.allrecipes.com/recipes/1083/fruits-and-vegetables/vegetables/cucumber/')">Cucumber</h2>
         </article>
 
         <!-- Recept 2-->
         <article class="recipe">
-            <img src="../images/rice.jpg" class="recipeimage">
+            <img src="../images/rice.jpg" alt="rice" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.delish.com/cooking/recipe-ideas/g129/rice-recipes/')">Rice</h2>
         </article>
 
         <!-- Recept 3-->
         <article class="recipe">
-            <img src="../images/salad.jpg" class="recipeimage">
+            <img src="../images/salad.jpg" alt="salad" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.loveandlemons.com/salad-recipes/')">Salad</h2>
         </article>
 
         <!-- Recept 4-->
         <article class="recipe">
-            <img src="../images/fruit.jpg" class="recipeimage">
+            <img src="../images/fruit.jpg" alt="fruit" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.allrecipes.com/recipes/1058/fruits-and-vegetables/fruits/')">Fruits</h2>
         </article>
 
         <!-- Recept 5-->
         <article class="recipe">
-            <img src="../images/vegetables.jpg" class="recipeimage">
+            <img src="../images/vegetables.jpg" alt="vegetables" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.allrecipes.com/recipes/1059/fruits-and-vegetables/vegetables/')">Vegetables</h2>
         </article>
 
         <!-- Recept 6-->
         <article class="recipe">
-            <img src="../images/meat.jpg" class="recipeimage">
+            <img src="../images/meat.jpg" alt="meat" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.delish.com/cooking/nutrition/g3209/healthy-high-protein/')">Healthy meat</h2>
         </article>
 
         <!-- Recept 7-->
         <article class="recipe">
-            <img src="../images/milkshake.jpg" class="recipeimage">
+            <img src="../images/milkshake.jpg" alt="milkshakes" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.delish.com/cooking/g1504/milkshake-recipes/')">Milkshakes</h2>
         </article>
 
         <!-- Recept 8-->
         <article class="recipe">
-            <img src="../images/schnitzel.jpg" class="recipeimage">
+            <img src="../images/schnitzel.jpg" alt="schnitzel" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.cooklikeczechs.com/czech-rizek-traditional-breaded-pork-chops/')">Schnitzel</h2>
         </article>
 
         <!-- Recept 9-->
         <article class="recipe">
-            <img src="../images/mango.jpg" class="recipeimage">
+            <img src="../images/mango.jpg" alt="mango" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.bonappetit.com/recipes/slideshow/mango-recipes')">Mango</h2>
         </article>
 
         <!-- Recept 10-->
         <article class="recipe">
-            <img src="../images/apples.jpg" class="recipeimage">
+            <img src="../images/apples.jpg" alt="apples" class="recipeimage">
             <h2 class="recipetitle" onclick="redirect('https://www.bonappetit.com/recipes/slideshow/mango-recipes')">Apples</h2>
-        </section>   
+        </article>
+    </section>   
 
     <h2 class="generaltitle">Health Articles</h2>
-    <section id="articles" onclick="arrow_forward_animate(); article_viewer_relay_sleep();">
+    <section id="articles">
         <article class="article" id="sleep_article" onclick="arrow_forward_animate(); article_viewer_relay_sleep();">
             <h2 class="article_title" id="sleep_article_title" onclick="arrow_forward_animate(); article_viewer_relay_sleep();">Tips to get better sleep</h2>
-            <img src="../icons/arrow_forward.svg" class="article_forward" id="arrow_forward" onclick="arrow_forward_animate(); article_viewer_relay_sleep()"> <!-- Animuje při kliknutí -->
+            <img src="../icons/arrow_forward.svg" class="article_forward" alt="arrow icon" id="arrow_forward" onclick="arrow_forward_animate(); article_viewer_relay_sleep()"> <!-- Animuje při kliknutí -->
         </article>
     </section>
 
@@ -120,22 +121,22 @@
     <h2 class="generaltitle">Exercise videos by Fitbit</h2>
     <section id="exercise_videos_grid"> <!-- Info: main je semantic divu -->
         <article class="exercise_video"> <!-- Video 1 -->
-            <img src="../images/full-body.jpg" class="exerciseimage">
+            <img src="../images/full-body.jpg" alt="full body exercises" class="exerciseimage">
             <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=9g4vDnmyhxA&list=PL_xLGCqFuhiE4-N8HWKxw8c7JG_0r6lzA">Full-body Classes</a></h2>
         </article>
 
         <article class="exercise_video"> <!-- Video 2 -->
-            <img src="../images/quick-classes.jpg" class="exerciseimage">
+            <img src="../images/quick-classes.jpg" alt="quick exercise classes" class="exerciseimage">
             <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=rryt9VN7TC8&list=PL_xLGCqFuhiER6SfBroqlSDzbTC39QLGw">Quick Classes</a></h2>
         </article>
 
         <article class="exercise_video">
-            <img src="../images/fitbitbanner.png" class="exerciseimage">
+            <img src="../images/fitbitbanner.png" alt="focused exercise classes" class="exerciseimage">
             <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=lUqMH4v1lo4&list=PL_xLGCqFuhiEHivIUm6dArRgVgWNfR-GX">Focused Classes</a></h2>
         </article>
 
         <article class="exercise_video">
-            <img src="../images/home-exercises.webp" class="exerciseimage">
+            <img src="../images/home-exercises.webp" alt="at home exercise classes" class="exerciseimage">
             <h2 class="recipetitle"><a href="https://www.youtube.com/watch?v=-Fg4r7RP_PQ&list=PL_xLGCqFuhiEZaogjM02yCOhtyDpX_5Gq">At Home Classes</a></h2>
         </article>
     </section>

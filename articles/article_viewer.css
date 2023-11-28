@@ -42,7 +42,7 @@ body {
     margin-top: 1rem;
     z-index: 2;
     position: fixed;
-    font-family: "Exo 2";
+    font-family: "Exo 2", Sans-serif;
     margin-left: 2rem;
 }
 
@@ -65,11 +65,11 @@ body {
 }
 
 #reader_article_title {
-    font-family: "Exo 2";
+    font-family: "Exo 2", Sans-serif;
 }
 
 #reader_article_content {
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif;
 }
 
 @keyframes arrow_cycle {

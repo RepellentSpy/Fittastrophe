@@ -8,10 +8,9 @@ body {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    animation-name: startup;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    animation: 0.5s startup forwards;
     position: relative;
+    user-select: none;
 }
 
 body.coach {
@@ -30,14 +29,12 @@ body.coach {
 }
 
 h2.generaltitle {
-    font-family: "DM Sans", Sans-serif;
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     padding: 0.5rem;
     margin-left: 0.4135rem;
-    animation: generaltitle_loading 1s forwards;
 }
 
 div.fitness_statistics {
-    background-color: transparent;
     width: 19rem;
     height: 8.25rem;
     border-radius: 1.25rem;
@@ -48,7 +45,6 @@ progress {
     width: 92%;
     height: 25%;
     margin: -1rem 0 0 1rem;
-    /* Top, right, bottom, left */
     border-radius: 999rem;
 }
 
@@ -66,7 +62,7 @@ progress::-webkit-progress-value {
 #contentbackground {
     background-color: white;
     border-top-left-radius: 1.25rem;
-    height: 57.2rem;
+    height: 99999rem;
     margin-top: 0.725rem;
     margin-left: 20em;
 }
@@ -76,50 +72,47 @@ progress::-webkit-progress-value {
 }
 
 #more_exercise_tip {
-    font-family: "DM Sans", Sans-serif;
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     padding: 0.625rem;
     margin-left: 5px;
-    color: black;
 }
 
 #more_steps_tip {
-    font-family: "DM Sans", Sans-serif;
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     padding: 0.625rem;
     margin-left: 0.3125rem;
-    color: black;
 }
 
 #more_distance_tip {
-    font-family: "DM Sans", Sans-serif;
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     padding: 0.625rem;
     margin-left: 0.3125rem;
-    color: black;
 }
 
 p.progressbartext {
     margin-left: 16.8rem;
     margin-top: 0.1875rem;
-    font-family: "DM Sans"
+    font-family: "DM Sans", Sans-serif, Sans-serif;
 }
 
 h2.tab {
     margin-top: -3.5875rem;
     float: left;
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     font-weight: normal;
 }
 
 h2.tab {
     margin-top: -3.5875rem;
     float: left;
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     font-weight: normal;
 }
 
 h2.tab_subpage {
     margin-top: -5.8875rem;
     float: left;
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     font-weight: normal;
 }
 
@@ -154,9 +147,7 @@ h2.tab_subpage {
     margin-left: 33.4rem;
     margin-top: -3.65rem;
     position: absolute;
-    animation-name: change_tab_animation;
-    animation-duration: 0.7s;
-    animation-fill-mode: forwards;
+    animation: 0.7s change_tab_animation forwards;
 }
 
 div.selected_tab_indicator {
@@ -165,9 +156,7 @@ div.selected_tab_indicator {
     background-color: #54818b;
     margin-left: 20.7rem;
     margin-top: -1.4rem;
-    animation-name: change_tab_animation_backwards;
-    animation-duration: 0.7s;
-    animation-fill-mode: forwards;
+    animation: 0.7s change_tab_animation_backwards forwards;
 }
 
 div.statistic {
@@ -177,7 +166,7 @@ div.statistic {
     padding-left: 2rem;
     margin-left: 1.5rem;
     margin-right: 39rem;
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif, Sans-serif;
     width: 11.2rem;
     white-space: nowrap;
 }
@@ -225,7 +214,7 @@ div.iconcircle {
 
 div.profile_header {
     padding: 1.5rem;
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif;
     background: linear-gradient(to right, #f8fdf9, #cde9e3);
     border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
@@ -237,7 +226,7 @@ div.profile_header {
 
 /* Coach podstránka */
 p.backbutton {
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif;
     margin-left: 1.25rem;
 }
 
@@ -280,7 +269,7 @@ h2.article_title {
     font-size: 2rem;
     padding: 1rem;
     margin-top: -0.2rem;
-    font-family: "Exo 2";
+    font-family: "Exo 2", Sans-serif;
     cursor: pointer;
 }
 
@@ -300,7 +289,7 @@ a {
 
 h2.recipetitle {
     margin-left: 1.25rem;
-    font-family: "Exo 2";
+    font-family: "Exo 2", Sans-serif;
     font-weight: 600;
     cursor: pointer;
     color: #004455;
@@ -340,7 +329,7 @@ img.exerciseimage {
     border-bottom-right-radius: 1.2rem;
     border-color: transparent;
     text-align: center;
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif;
 }
 
 #mobiletabs {
@@ -392,7 +381,8 @@ img.exerciseimage {
     border-radius: 0.8rem;
     padding: 1rem;
     white-space: collapse;
-    visibility: hidden; /* změna při open_debug() */
+    visibility: hidden;
+    /* změna při open_debug() */
 }
 
 #clearvaluesbutton {
@@ -400,7 +390,7 @@ img.exerciseimage {
 }
 
 #debug_title {
-    font-family: "Exo 2";
+    font-family: "Exo 2", Sans-serif;
     font-weight: normal;
     margin-left: 0.3rem;
     margin-top: 0.2rem;
@@ -424,7 +414,7 @@ button.debug_button {
 }
 
 #close_debug_button {
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif;
     font-weight: bolder;
     background-color: transparent;
     border-color: transparent;
@@ -453,7 +443,8 @@ input.debug_slider {
     accent-color: #068675;
 }
 
-#age_easter_egg { /* Nezapomenout dodělat */
+#age_easter_egg {
+    /* Nezapomenout dodělat */
     visibility: visible;
 }
 
@@ -494,6 +485,13 @@ img.checkmark {
     z-index: 1;
 }
 
+#bmiicon {
+    margin-left: 0.2rem;
+    scale: 1.2;
+    margin-top: 0.2rem;
+    z-index: 1;
+}
+
 #mainiconsettings {
     height: 1.8rem;
     width: 1.8rem;
@@ -514,23 +512,20 @@ img.checkmark {
     background-color: white;
     border-color: transparent;
     padding: 0.7rem;
-    font-family: "DM Sans";
+    font-family: "DM Sans", Sans-serif;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     margin-top: 0.5rem;
     margin-left: 1.2rem;
     width: 28rem;
     height: 3.5rem;
-    animation-name: name_button_click_revert;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
+    animation: 0.2s name_button_click_revert forwards;
 }
 
 #name_button:active {
-    animation-name: name_button_click;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
+    animation: 0.2s name_button_click forwards;
 }
+
 /* animation */
 @keyframes change_tab_animation {
     from {margin-left: 23.4rem; width: 4.5rem;}
@@ -561,7 +556,7 @@ img.checkmark {
 
 @keyframes checkmark_appear {
     from {scale: 0; filter: grayscale(1);}
-    to {scale: 1; filter: grayscale(0);}
+    to {scale: 1;filter: grayscale(0);}
 }
 
 @keyframes checkmark_disappear {
@@ -590,7 +585,7 @@ img.checkmark {
 }
 
 @keyframes button_press {
-    from {color: black; background-color: white;scale: 1;}
+    from {color: black; background-color: white; scale: 1;}
     to {color: white; background-color: gray; scale: 0.89;}
 }
 
@@ -622,17 +617,29 @@ img.checkmark {
         /* Nemám tušení proč to bez tohoto nefunguje a nelíbí se mi to */
         height: 100%;
     }
-    
+
     body {
         width: 100%;
         height: 100%;
-        overflow: scroll; /* Bez tohoto nebude fungovat scrolling na mobilu */
+        overflow: scroll;
+        /* Bez tohoto nebude fungovat scrolling na mobilu */
         -webkit-overflow-scrolling: touch;
     }
 
-    html, body { /* Záplata na scrolovací problém */
+    html,
+    body {
+        /* Záplata na scrolovací problém */
         max-width: 100%;
         overflow-x: hidden;
+    }
+
+    body.coach {
+        height: 135rem;
+        /* Limit scrollování */
+    }
+
+    body.dashboard {
+        height: 67.5rem;
     }
 
     #dashboardtitle {
@@ -664,7 +671,7 @@ img.checkmark {
     p.progressbartext {
         margin-left: 88%;
         margin-top: 0.1875rem;
-        font-family: "DM Sans"
+        font-family: "DM Sans", Sans-serif
     }
 
     #tabs {
@@ -678,9 +685,9 @@ img.checkmark {
         position: fixed;
         bottom: 0;
         margin: 0 auto;
-        width: 100%;
-        height: 12%;
-        font-family: "DM Sans";
+        width: 100vw;
+        height: 12vh;
+        font-family: "DM Sans", Sans-serif;
         z-index: 2;
     }
 
@@ -847,5 +854,68 @@ img.checkmark {
 
     p.backbutton {
         visibility: hidden;
+    }
+
+    div.profile_header {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        width: 75vw;
+        margin-top: 5vh;
+        border-radius: 2rem;
+    }
+
+    #name_button {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        border-radius: 999rem;
+        width: 30%;
+    }
+
+    #name_input {
+        width: 40vw;
+        margin-right: 0;
+        border-radius: 999rem;
+        margin-left: 5vw;
+    }
+
+    #weight_input {
+        margin-left: 6vw;
+        width: 77vw;
+    }
+
+    #height_input {
+        margin-left: 6vw;
+        width: 77vw;
+    }
+
+    #profile_change_name {
+        position: inline-grid;
+    }
+
+    @keyframes name_box_appear {
+        from {margin-left: 2vw; opacity: 0;}
+        to {margin-left: 5vw; opacity: 1;}
+    }
+
+    #weight_indicator {
+        float: left;
+        margin-top: -11.1rem;
+        margin-left: 38vw;
+        font-weight: normal;
+        font-size: 1.2rem;
+    }
+
+    #height_indicator {
+        float: left;
+        margin-top: -9.2rem;
+        margin-left: 38vw;
+        font-weight: normal;
+        font-size: 1.2rem;
+    }
+
+    @keyframes special_article1_expand {
+        0% {scale: 1;}
+        50% {margin-left: 15%; scale: 10;}
+        100% {scale: 20; margin-left: 15%;margin-top: -20rem;}
     }
 }

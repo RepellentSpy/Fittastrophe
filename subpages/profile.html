@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fittastrophe My Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.svg">
     <script src="../main.js"></script>
     <!-- Google fonts integration, Icons provided by Google Fonts -->
@@ -16,30 +16,49 @@
         rel="stylesheet">
     <!-- js-cookie modul (https://github.com/js-cookie/js-cookie/)-->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 </head>
 
 <body id="profile">
     <header id="titlesurroundingbox">
-        <h1 id="titletext"><img src="../icons/mainicon.svg" id="mainicon" width=32 height=32>Fittastrophe Profile</h1>
+        <h1 id="titletext"><img src="../icons/mainicon.svg" alt="Fittastrophe logo" id="mainicon" width=32 height=32>Fittastrophe Profile</h1>
         <p class="backbutton"><a href="../index.html">Back to dashboard</a></p>
     </header>
 
-    <div class="profile_header">
-        <img src="../icons/mainicon_fill.svg" id="mainiconsettings" width=32 height=32>
-        <h2 id="full_name">George Washington</h2>
-        <p id="join_date">Joined 2023</p>
+    <div id="mobiletabs"> <!-- Tyto mobilní záložky jsou produktem několika hodin utrpení -->
+        <div id="mobiletabtexts">
+            <div id="mobiletab0">
+                <a href="../index.html">Dashboard</a>
+                <span class="material-symbols-outlined" id="dashboard_mobile_icon">health_metrics</span>
+            </div>
+            <div id="mobiletab1">
+                <a href="coach.html">Coach</a>
+                <span class="material-symbols-outlined" id="coach_mobile_icon">assignment</span>
+            </div>
+            <div id="mobiletab2">
+                <a href="profile.html">Profile</a>
+                <span class="material-symbols-outlined" id="profile_mobile_icon">badge</span>
+            </div>
+        </div>
     </div>
 
-    <div id="changename">
+    <div id="profile_change_name">
+        <div class="profile_header">
+            <img src="../icons/mainicon_fill.svg" alt="fittastrophe logo on profile card" id="mainiconsettings" width=32 height=32>
+            <h2 id="full_name">George Washington</h2>
+            <p id="join_date">Joined 2023</p>
+        </div>
+
         <button onclick="name_button()" id="name_button">Change name</button>
-        <input oninput="change_name()" type="text" id="name_input" placeholder="Enter new name"></input>
+        <input oninput="change_name()" type="text" id="name_input" placeholder="Enter new name">
     </div>
 
     <div id="changeweight">
-        <input onblur="change_weight()" type="number" id="weight_input" min="0" max="1000" placeholder="Change weight (kg)"></input>
+        <input onblur="change_weight()" type="number" id="weight_input" min="0" max="1000" placeholder="Change weight (kg)">
     </div>
     <div id="changeheight">
-        <input onblur="change_height()" type="number" id="height_input" max="500" min="1" placeholder="Change height (cm)"></input>
+        <input onblur="change_height()" type="number" id="height_input" max="500" min="1" placeholder="Change height (cm)">
     </div>
 
     <div>
