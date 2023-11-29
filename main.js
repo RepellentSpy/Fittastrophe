@@ -21,22 +21,22 @@ function cookies_read() {
     document.getElementById("stepsprogress").value = Cookies.get("steps");
     document.getElementById("distanceprogress").value = Cookies.get("distance");
     document.getElementById("azmprogress").value = Cookies.get("azm");
-    display_percentages_sliders();
-    removeMissingValueWarning();
+    display_percentages_sliders(); // Zobrazí pod progress bary procentuální hodnotu
+    removeMissingValueWarning(); // Odebere varování o chybějících hodnotách, pokud se zobrazuje
 
-    // Aplikovat uložené hodnoty na debug slidery
+    // Aplikovat uložené hodnoty do debug menu na posuvníky
     document.getElementById("steps_debug_slider").value = Cookies.get("steps")
     document.getElementById("distance_debug_slider").value = Cookies.get("distance")
     document.getElementById("azm_debug_slider").value = Cookies.get("azm")
 }
 
 function saveValuesToCookies() { // Funkce ukládající hodnoty do cookies
-    // Všechny cookies vyprší za 1 den (pro jistotu)
+    // Všechny cookies vyprší za 1 den (pro experimentální účely)
     Cookies.set("steps", steps, { expires: 1 }); // Cookie jménem steps má hodnotu variablu steps a vyprší za 1 den
     Cookies.set("distance", distance, { expires: 1 });
     Cookies.set("azm", azm, { expires: 1 });
     console.log("uloženo do cookies");
-} // Do budoucnosti bych chtěl stránku napojit na databázi a ukládat to tam
+} // Do budoucnosti bych chtěl stránku napojit na databázi a ukládat to tam, už s tím experimentuji :D
 
 // tlačítko změní všechny hodnoty na náhodné číslo
 function randomize() {
@@ -51,27 +51,27 @@ function randomize() {
     document.getElementById("azmprogress").value = azm;
 
     // Poznámka do konzole
-    console.log(""); // prázdné sdělení pro oddělení od ostatních konzolových sdělení (pořádek)
+    console.log(""); // prázdné sdělení pro oddělení od ostatních konzolových sdělení (kvůli pořádku)
     console.log("hodnoty změněny na", Math.round(steps), ",", Math.round(distance), ",", Math.round(azm)); // Sdělí na jaké hodnoty to bylo změněno
 
-    saveValuesToCookies();          // Uloží hodnoty do souborů cookie pro automatické obnovení při načtení stránky
+    saveValuesToCookies();          // Uloží hodnoty do souborů cookie pro automatické obnovení při načtení stránky (obnovuje funkce read_cookies)
     display_percentages_sliders();  // Zobrazí procentuální hodnotu cvičení (zaokrouhleno)
-    checkToShowHealthWarnings();    // Zkontroluje zda má uživatel dost kroků, vzdálenosti a cvičení
-    checkForGoalComplete();         // Kontrola zda se má zobrazit fajvka
-    removeMissingValueWarning();    // Odebere varování o chybících hodnotách
+    checkToShowHealthWarnings();    // Zkontroluje zda má uživatel dost kroků, vzdálenosti a cvičení - pokud ne, ukáže doporučení
+    checkForGoalComplete();         // Kontrola zda má uživatel na jakémkoliv cíli 100%, pokud ano, zobrazí se fajvka
+    removeMissingValueWarning();    // Odebere varování o chybících hodnotách, pokud se zobrazuje
 
-    // Změnit hodnoty sliderů v debug menu
+    // Změnit hodnoty posuvníků v debug menu
     document.getElementById("steps_debug_slider").value = Cookies.get("steps")
     document.getElementById("distance_debug_slider").value = Cookies.get("distance")
     document.getElementById("azm_debug_slider").value = Cookies.get("azm")
 }
 
-function removeMissingValueWarning() { // odebere varování o neurčených hodnotách
+function removeMissingValueWarning() { // odebere varování o neurčených hodnotách, pokud se zobrazuje
     document.getElementById("debugnotice").innerHTML = "";
     document.getElementById("debugnotice").style.backgroundColor = "transparent";
 }
 
-function display_percentages_sliders() { // zobrazí pod progress bary procentuální hodnoty v textové formě
+function display_percentages_sliders() { // zobrazí pod progress bary procentuální hodnoty
     document.getElementById("azmprogresstext").innerHTML = Math.round(azmprogress.value) + "%";  // zobrazení procentuální hodnoty cvičení
     document.getElementById("stepsprogresstext").innerHTML = Math.round(stepsprogress.value) + "%"; // zobrazení procentuální hodnoty kroků
     document.getElementById("distanceprogresstext").innerHTML = Math.round(distanceprogress.value) + "%"; // zobrazení procentuální hodnoty vzdálenosti
@@ -81,21 +81,21 @@ function display_percentages_sliders() { // zobrazí pod progress bary procentu�
 // Pokud ne, ukáže doporučení, že by měl zamakat
 function checkToShowHealthWarnings() {
     if (azmprogress.value > 30) { // Varování o málo cvičení
-        document.getElementById("more_exercise_tip").innerHTML = "";
+        document.getElementById("more_exercise_tip").innerHTML = ""; // Dostatek cviku
     } else {
-        document.getElementById("more_exercise_tip").innerHTML = "You haven't met your exercise goal yet";
+        document.getElementById("more_exercise_tip").innerHTML = "You haven't met your exercise goal yet"; // Nedostatek cviku
     }
 
     if (stepsprogress.value > 30) { // Varování o málo krocích
-        document.getElementById("more_steps_tip").innerHTML = "";
+        document.getElementById("more_steps_tip").innerHTML = ""; // Dostatek kroků
     } else {
-        document.getElementById("more_steps_tip").innerHTML = "You haven't met your step goal yet";
+        document.getElementById("more_steps_tip").innerHTML = "You haven't met your step goal yet"; // Nedostatek kroků
     }
 
     if (distanceprogress.value > 30) { // Varování o málo ušlé vzdálenosti
-        document.getElementById("more_distance_tip").innerHTML = ""
+        document.getElementById("more_distance_tip").innerHTML = "" // Dostatek vzdálenosti
     } else {
-        document.getElementById("more_distance_tip").innerHTML = "You haven't met your distance goal yet";
+        document.getElementById("more_distance_tip").innerHTML = "You haven't met your distance goal yet"; // Nedostatek vzdálenosti
     }
 }
 
@@ -103,25 +103,25 @@ function checkToShowHealthWarnings() {
 // Funkce se také stará o odebrání fajvky, pokud není cíl splněn
 function checkForGoalComplete() {
     if (stepsprogress.value >= 100) {
-        document.getElementById("stepscheckmark").style.animation = "checkmark_appear 0.3s forwards";
+        document.getElementById("stepscheckmark").style.animation = "checkmark_appear 0.3s forwards"; // Cíl kroků je splněn
     } else {
-        document.getElementById("stepscheckmark").style.animation = "checkmark_disappear 0.3s forwards";
+        document.getElementById("stepscheckmark").style.animation = "checkmark_disappear 0.3s forwards"; // Cíl kroků není splněn
     }
 
     if (distanceprogress.value >= 100) {
-        document.getElementById("distancecheckmark").style.animation = "checkmark_appear 0.3s forwards";
+        document.getElementById("distancecheckmark").style.animation = "checkmark_appear 0.3s forwards"; // Cíl vzdálenosti je splněn
     } else {
-        document.getElementById("distancecheckmark").style.animation = "checkmark_disappear 0.3s forwards";
+        document.getElementById("distancecheckmark").style.animation = "checkmark_disappear 0.3s forwards"; // Cíl vzdálenosti není splněn
     }
 
     if (azmprogress.value >= 100) {
-        document.getElementById("azmcheckmark").style.animation = "checkmark_appear 0.3s forwards";
+        document.getElementById("azmcheckmark").style.animation = "checkmark_appear 0.3s forwards"; // Cíl cvičení je splněn
     } else {
-        document.getElementById("azmcheckmark").style.animation = "checkmark_disappear 0.3s forwards";
+        document.getElementById("azmcheckmark").style.animation = "checkmark_disappear 0.3s forwards"; // Cíl cvičení není splněn
     }
 }
 
-// Aktuálně nevyužitá funkce, odebere debug_menu - pokud použita, header se rozbije
+// Aktuálně nevyužitá funkce, odebere debug menu - pokud použita, header se rozbije
 function hide_debug() {
     var remove_element = document.getElementById("open_debug_button");
     if (remove_element) {
@@ -129,7 +129,7 @@ function hide_debug() {
     }
 }
 
-// Nastaví všechny statistické hodnoty na 100%
+// Nastaví kroky, vzdálenost a cvičení na 100%
 function setAllToMax() {
     steps = 100;
     distance = 100;
@@ -140,11 +140,11 @@ function setAllToMax() {
     document.getElementById("distanceprogress").value = distance;
     document.getElementById("azmprogress").value = azm;
 
-    display_percentages_sliders(); // Aktualizuje procentuální hodnoty pod progress bary
-    checkForGoalComplete(); // Zkontroluje zda je nějaký cíl hotov a přidá případně fajvku
-    removeMissingValueWarning(); // Odebere varování o neurčených hodnotách, pokud se zobrazuje
-    saveValuesToCookies(); // Uloží nové hodnoty do cookies
-    checkToShowHealthWarnings(); // Zkontroluje zda by se mělo ukázat doporučení (více kroků atd) a připadně ho zobrazí
+    display_percentages_sliders();  // Aktualizuje procentuální hodnoty pod progress bary
+    checkForGoalComplete();         // Zkontroluje zda je nějaký cíl hotov a přidá případně fajvku
+    removeMissingValueWarning();    // Odebere varování o neurčených hodnotách, pokud se zobrazuje
+    saveValuesToCookies();          // Uloží nové hodnoty do cookies
+    checkToShowHealthWarnings();    // Zkontroluje zda by se mělo ukázat doporučení (více kroků atd) a připadně ho zobrazí
 
     // Změnit hodnoty sliderů v debug menu na nové
     document.getElementById("steps_debug_slider").value = Cookies.get("steps")
@@ -160,26 +160,26 @@ function name_button() { // Zobrazí po stisknutí tlačítka na změnu jména p
 }
 
 function change_name() { // Změní jméno uživatele a uloží do cookies, potom nahoře ve window.onload se jméno obnovuje
-    var new_name = document.getElementById("name_input").value;
-    document.getElementById("full_name").innerHTML = new_name;
-    Cookies.set("full_name", new_name, { expires: 7 });
+    var new_name = document.getElementById("name_input").value;     // new_name = hodnota pole "name_input"
+    document.getElementById("full_name").innerHTML = new_name;      // Nastaví text s id "full_name" na hodnotu new_name
+    Cookies.set("full_name", new_name, { expires: 7 });             // Uloží nové jméno do cookies na 7 dní
 }
 
 function change_height() { // Změní jméno uživatele a uloží do cookies, potom nahoře ve window.onload se jméno obnovuje
-    var new_height = document.getElementById("height_input").value;
-    document.getElementById("height_indicator").innerHTML = "Height: " + new_height + " cm";
-    Cookies.set("height", new_height, { expires: 7 });
+    var new_height = document.getElementById("height_input").value;                             // new_height = hodnota pole "height_input"
+    document.getElementById("height_indicator").innerHTML = "Height: " + new_height + " cm";    // Změní text s id "height_indicator" na výsku, za výšku napíše "cm" a před ni "Height:"
+    Cookies.set("height", new_height, { expires: 7 });                                          // Výška je uložena do cookies na 7 dní
 }
 
 // Změní váhu v cookies a na podstránce Your Profile
 function change_weight() {
-    var new_weight = document.getElementById("weight_input").value; // Získá novou váhu z input pole.
-    if (new_weight >= 20) { // Pokud je nová váha větší nebo rovna 20,
-        Cookies.set("weight", new_weight, { expires: 7 }); // Uloží novou váhu do cookies.
-        document.getElementById("weight_indicator").innerHTML = "Weight: " + new_weight + " kg"; // Zobrazí novou váhu na podstránce.
-    } else { // Pokud je nová váha menší než 20,
-        alert("Error: Weight not set, weight is too low"); // Zobrazí chybovou hlášku, protože váha menší než 20 je blbost
-        // Upřímně, i váha "20" je blbost, ale rozhodl jsem se zde stanovit minimální hranici
+    var new_weight = document.getElementById("weight_input").value;                                 // Získá novou váhu z input pole a uloží ji pod "new_weight"
+    if (new_weight >= 20) {                                                                         // Pokud je nová váha větší nebo rovna 20,
+        Cookies.set("weight", new_weight, { expires: 7 });                                          // Uloží novou váhu do cookies.
+        document.getElementById("weight_indicator").innerHTML = "Weight: " + new_weight + " kg";    // Zobrazí novou váhu na podstránce.
+    } else {                                                                                        // Pokud je nová váha menší než 20,
+        alert("Error: Weight not set, weight is too low");                                          // Zobrazí chybovou hlášku, protože váha menší než 20 je blbost
+    // Upřímně, i váha "20" je blbost, ale rozhodl jsem se zde stanovit minimální hranici
     }
 }
 
@@ -195,7 +195,7 @@ function open_debug() {
     }
 }
 
-// Pouze zavře debug_menu. Tato funkce je využita křížkem v debug_menu
+// Pouze zavře debug_menu. Tato funkce je využita křížkem v debug_menu.
 function close_debug() {
     document.getElementById("debug_menu").style.animation = "debug_disappear 0.3s forwards"; // Animace zavírání debug_menu
     setTimeout(function () {
@@ -323,23 +323,25 @@ function toggleDarkMode() { // Aktuálně rozpracováno a nevyužito
     }
 }
 
+// Zobrazí vítající zprávu
 function show_nodata_warning() {
-    if (Cookies.get("steps") === undefined && Cookies.get("distance") === undefined && Cookies.get("azm") === undefined) {
-        document.getElementById("no_data_big_warning").style.visibility = "visible";
-        document.getElementById("no_data_background").style.visibility = "visible";
-    } else {
-        close_warning();
+    if (Cookies.get("steps") === undefined && Cookies.get("distance") === undefined && Cookies.get("azm") === undefined) { // Pokud steps, distance a azm nejsou v cookies definovány
+        document.getElementById("no_data_big_warning").style.visibility = "visible"; // no_data_big_warning je zviditelněno
+        document.getElementById("no_data_background").style.visibility = "visible"; // černé pozadí za varováním je také zviditelněno
+    } else { // jinak
+        close_warning(); // neukáže zprávu
     }
 }
 
+// Funkce zavření zprávy
 function close_warning() {
-    var remove_element_one = document.getElementById("no_data_big_warning");
-    if (remove_element_one) {
+    var remove_element_one = document.getElementById("no_data_big_warning"); // Vybere "no_data_big_warning"
+    if (remove_element_one) { // odebere "no_data_big_warning"
         remove_element_one.parentNode.removeChild(remove_element_one);
     }
 
-    var remove_element_two = document.getElementById("no_data_background");
-    if (remove_element_two) {
+    var remove_element_two = document.getElementById("no_data_background"); // vybere "no_data_background"
+    if (remove_element_two) { // odebere "no_data_background"
         remove_element_two.parentNode.removeChild(remove_element_two);
     }
 }
