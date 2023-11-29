@@ -15,7 +15,7 @@
   <li>Rozsáhlé CSS styly</li>
   <li>Propracované CSS Animace</li>
   <li>JavaScript funkce, které spolupracují s HTML a CSS</li>
-  <li>Mobilní zobrazení (⚠️nedokončeno)</li>
+  <li>Kreativní mobilní zobrazení</li>
   <li>Ukládání a čtení souborů cookies</li>
   <li>Uložení stavu po odchodu ze stránky a při přechodu mezi podstránkami</li>
   <li>⚠️ Experimentální branch s propojením k databázi (nedokončeno)</li>
