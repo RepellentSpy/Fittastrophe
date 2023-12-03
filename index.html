@@ -18,72 +18,69 @@
 </head>
 
 <body class="dashboard">
-    <!-- Page header, contains Title, icon, button and tabs-->
-    <header id="titlesurroundingbox">
-        <h1 id="titletext">
-            <img src="icons/mainicon.svg" id="mainicon" alt="Fittastrophe Icon" width=32 height=32>
+    <header id="titlesurroundingbox"> <!-- Hlavička stránky, obsahuje ikonu, záložky, debug button a varování o chybějících datech-->
+        <h1 id="titletext"> <!-- Nadpis stránky -->
+            <img src="icons/mainicon.svg" id="mainicon" alt="Fittastrophe Icon" width=32 height=32> <!-- Hlavní ikona -->
             Fittastrophe
-            <label id="debugnotice">No data found</label>
+            <label id="debugnotice">No data found</label> <!-- Varování o nenalezených datech -->
         </h1>
 
-        <button onclick="open_debug()" class="debug_button" id="open_debug_button">Set Data</button>
+        <button onclick="open_debug()" class="debug_button" id="open_debug_button">Set Data</button> <!-- Debug button -->
         
         <div id="tabs"> <!-- Textové záložky -->
             <h2 class="tab" id="tab0"><a>Dashboard</a></h2>
             <h2 class="tab" id="tab1"><a href="subpages/coach.html">Coach</a></h2>
             <h2 class="tab" id="tab2"><a href="subpages/profile.html">Your profile</a></h2>
-            <div class="selected_tab_indicator"></div>
+            <div class="selected_tab_indicator"></div> <!-- Čárka pod záložkou ukazuje vybranou stránku -->
         </div>
 
-        <!-- Toto je nevyužitý prvek, který možná přidám v budoucnu -->
+        <!-- Nevyužitý prvek - toggle na dark mode, možná někdy dodělám -->
         <!-- <input type="checkbox" onChange="toggleDarkMode()" id="darkmode_toggle" name="darkmode_toggle" value="off">
         <label for="darkmode_toggle">Dark Mode</label><br> -->
     </header>
 
     <div id="mobiletabs"> <!-- Tyto mobilní záložky jsou produktem několika hodin utrpení -->
-        <div id="mobiletabtexts">
-            <div id="mobiletab0">
+        <div id="mobiletabtexts"> <!-- Obsahuje jednotlivé divy pro záložky -->
+            <div id="mobiletab0"> <!-- Dashboard záložka -->
                 <a href="index.html">Dashboard</a>
-                <span class="material-symbols-outlined" id="dashboard_mobile_icon">health_metrics</span>
+                <span class="material-symbols-outlined" id="dashboard_mobile_icon">health_metrics</span> <!-- Ikona -->
             </div>
-            <div id="mobiletab1">
-                <a href="subpages/coach.html">Coach</a>
-                <span class="material-symbols-outlined" id="coach_mobile_icon">assignment</span>
+            <div id="mobiletab1"> <!-- Coach záložka -->
+                <a href="subpages/coach.html">Coach</a> 
+                <span class="material-symbols-outlined" id="coach_mobile_icon">assignment</span> <!-- Ikona -->
             </div>
-            <div id="mobiletab2">
-                <a href="subpages/profile.html">Profile</a>
-                <span class="material-symbols-outlined" id="profile_mobile_icon">badge</span>
+            <div id="mobiletab2"> <!-- Your Profile záložka -->
+                <a href="subpages/profile.html">Profile</a> 
+                <span class="material-symbols-outlined" id="profile_mobile_icon">badge</span> <!-- Ikona -->
             </div>
         </div>
     </div>
-     <!-- Sidebar, Steps category -->
-     <div id="sidebar">
-        <div class="fitness_statistics">
+
+     <div id="sidebar"> <!-- Sidebar -->
+        <div class="fitness_statistics"> <!-- Oddělení kroků -->
             <h2 class="generaltitle"><img class="inline_icon" alt="Steps icon" src="icons/Steps.svg">Steps<img src="icons/checkmark.svg" alt="Goal complete checkmark" class="checkmark" id="stepscheckmark"></h2>
-            <label for="steps"></label>
-            <progress id="stepsprogress" value="0" max="100"></progress> <!-- random hodnota -->
+            <label for="steps"></label> <!-- Procentuální hodnota -->
+            <progress id="stepsprogress" value="0" max="100"></progress>
             <p class="progressbartext" id="stepsprogresstext">0%</p> <!-- popis hodnoty, mění se -->
         </div>
 
-        <!-- Sidebar, Distance category -->
-        <div class="fitness_statistics">
+        <div class="fitness_statistics"> <!-- Oddělení vzdálenosti -->
             <h2 class="generaltitle"><img class="inline_icon" src="icons/Distance.svg" alt="distance icon">Distance<img src="icons/checkmark.svg" alt="Goal complete checkmark" class="checkmark" id="distancecheckmark"></h2>
-            <label for="distance"></label>
-            <progress id="distanceprogress" value="0" max="100"></progress> <!-- random hodnota -->
+            <label for="distance"></label> <!-- Procentuální hodnota -->
+            <progress id="distanceprogress" value="0" max="100"></progress>
             <p class="progressbartext" id="distanceprogresstext">0%</p> <!-- popis hodnoty, mění se -->
         </div>
 
-        <!-- Sidebar, AZM category, AZM = active zone minutes-->
-        <div class="fitness_statistics">
+        <div class="fitness_statistics"> <!-- Oddělení cvičení -->
             <h2 class="generaltitle"><img class="inline_icon" alt="Movement minutes icon" src="icons/AZM.svg">Movement minutes<img src="icons/checkmark.svg" alt="Goal complete checkmark" class="checkmark" id="azmcheckmark"></h2>
-            <label for="AZM"></label>
-            <progress id="azmprogress" value="0" max="100"></progress> <!-- value controlled by randomize() -->
+            <label for="AZM"></label> <!-- Procentuální hodnota -->
+            <progress id="azmprogress" value="0" max="100"></progress>
             <p class="progressbartext" id="azmprogresstext">0%</p> <!-- value description, can change -->
         </div>
     </div>
 
-    <div id="no_data_background"></div>
-    <div id="no_data_big_warning">
+    <div id="no_data_background"></div> <!-- Černé pozadí pro zprávy -->
+    <div id="no_data_big_warning"> <!-- Vítající zpráva, ukazuje se pokud chybí data -->
         <h2 class="generaltitle">Vítejte v Fittastrophe</h2>
         <p class="warning_text"><b>Aktuálně nemáte zadaná žádná data</b></p>
         <p class="warning_text">Kroky, vzdálenost a cvik lze kdykoli nastavit v pravém horním rohu použitím tlačítka "Set Data"</p>
@@ -105,7 +102,7 @@
             <input type="range" min="0" max="100" value=0 id="azm_debug_slider" class="debug_slider" oninput="debug_azmChange()">
         </div>
 
-        <h2 class="generaltitle" id="dashboardtitle">Fitness dashboard</h2>
+        <h2 class="generaltitle" id="dashboardtitle">Fitness dashboard</h2> <!-- Nadpis -->
 
         <div id="statistic_chips">
             <div class="statistic" id="weight_chip"> <!-- Weight chip -->
@@ -125,15 +122,15 @@
             </div>
         </div>
         
-        <div class="lesson"> <!-- Reminder to take more steps, only appears if stepsprogress < 30%-->
+        <div class="lesson"> <!-- pokud stepsprogress < 30%, ukáže doporučení více kroků -->
             <h2 id="more_steps_tip"></h2>
         </div>
 
-        <div class="lesson"> <!-- Reminder to walk more distance, only appears if distanceprogress < 30%-->
+        <div class="lesson"> <!-- pokud distanceprogress < 30%, ukáže doporučení více vzdálenosti-->
             <h2 id="more_distance_tip"></h2>
         </div>
 
-        <div class="lesson"> <!-- Reminder to do more exercise, only appears if azmprogress < 30%-->
+        <div class="lesson"> <!-- pokud azmprogress < 30%, ukáže doporučení více cvičení-->
             <h2 id="more_exercise_tip"></h2>
         </div>
     </main> <!-- Konec velké obsahové plochy-->

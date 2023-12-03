@@ -972,12 +972,6 @@ p.close_warning_button {
         font-size: 1.2rem;
     }
 
-    @keyframes special_article1_expand {
-        0% {scale: 1;}
-        50% {margin-left: 15%; scale: 10;}
-        100% {scale: 20; margin-left: 15%;margin-top: -20rem;}
-    }
-
     #no_data_background {
         visibility: hidden;
         opacity: 0;
@@ -988,5 +982,12 @@ p.close_warning_button {
         visibility: hidden;
         opacity: 0;
         scale: 0;
+    }
+
+    /* Mobile animation changes */
+    @keyframes special_article1_expand {
+        0% {scale: 1;}
+        50% {margin-left: 15%; scale: 10;}
+        100% {scale: 20; margin-left: 15%;margin-top: -20rem;}
     }
 }

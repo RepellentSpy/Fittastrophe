@@ -179,7 +179,7 @@ function change_weight() {
         document.getElementById("weight_indicator").innerHTML = "Weight: " + new_weight + " kg";    // Zobrazí novou váhu na podstránce.
     } else {                                                                                        // Pokud je nová váha menší než 20,
         alert("Error: Weight not set, weight is too low");                                          // Zobrazí chybovou hlášku, protože váha menší než 20 je blbost
-    // Upřímně, i váha "20" je blbost, ale rozhodl jsem se zde stanovit minimální hranici
+        // Upřímně, i váha "20" je blbost, ale rozhodl jsem se zde stanovit minimální hranici
     }
 }
 
